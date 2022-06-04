@@ -127,6 +127,9 @@
             "763833830233866291"
         ],
         "logChannel": "748550054964494468",
+        "logDel": true,
+        "logEdit": true,
+        "logTimeout": true,
         "status": "online",
         "activity": {
             "name": "the beta testers",

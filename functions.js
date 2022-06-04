@@ -194,6 +194,7 @@ module.exports = {
 
         const log = fetchedLogs.entries.first();
         if (!log) return;
+        console.log(log)
 
         var timeDifference =
             newMember.communicationDisabledUntilTimestamp -
@@ -213,7 +214,7 @@ module.exports = {
             if (diffDays > 5) {embed.setDescription(`🔇1 week for <@${newMember.user.id}> by <@${log.executor.id}>`)};
         } else {
             embed.setDescription(
-                `**🔊 Timeout for ${newMember.user.tag} was removed by <@${log.executor.id}>**`
+                `**🔊 Timeout for ${newMember.user.tag} was removed, maybe by <@${log.executor.id}>**`
             );
         }
 
