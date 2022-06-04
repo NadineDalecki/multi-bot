@@ -212,7 +212,7 @@ module.exports = {
             if (diffDays > 0.99 && diffDays < 5) {embed.setDescription(`🔇1 day for <@${newMember.user.id}> by ${log.executor.tag}`)}
             if (diffDays > 5) {embed.setDescription(`🔇1 week for <@${newMember.user.id}> by ${log.executor.tag}`)};
         } else {
-            embed.setDescription(`🔊 Timeout for ${newMember.user.tag} is over`)
+            embed.setDescription(`🔊 Timeout for <@${newMember.user.tag}> is over`)
         }
 
         if (log.reason != null) { embed.addField("Reason:", log.reason, false)}
