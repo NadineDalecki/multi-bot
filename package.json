@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": "16.15.1"
+    "node": "v16.9.0"
   },
   "repository": {
     "type": "git",
