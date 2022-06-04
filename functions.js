@@ -213,7 +213,7 @@ module.exports = {
             if (diffDays > 5) embed.addField("Duration:", "1 Week", true);
         } else {
             embed.setDescription(
-                `**🔊 Timeout for <@${newMember.user.id}> was removed by <@${log.executor.id}>**`
+                `**🔊 Timeout for ${newMember.user.tag} was removed by <@${log.executor.id}>**`
             );
         }
 
