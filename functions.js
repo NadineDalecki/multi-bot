@@ -185,44 +185,45 @@ module.exports = {
             .send({ embeds: [embed] });
     },
     LogTimeout: async function (client, oldMember, newMember) {
-        const fetchedLogs = await client.guilds.cache
-            .get(set[client.user.username].guildId)
-            .fetchAuditLogs({
-                limit: 1,
-                type: "MEMBER_UPDATE",
-            });
 
-        const log = fetchedLogs.entries.first();
-        if (!log) return;
-        console.log(log)
+        if (oldMember.isCommunicationDisabled() != newMember.isCommunicationDisabled()) {
 
-        var timeDifference =
-            newMember.communicationDisabledUntilTimestamp -
-            new Date().getTime() +
-            360;
-        var differenceDate = new Date(timeDifference);
-        var diffDays = differenceDate / (1000 * 3600 * 24);
-        var diffMinutes = differenceDate.getUTCMinutes() + 1;
+            const fetchedLogs = await client.guilds.cache
+                .get(set[client.user.username].guildId)
+                .fetchAuditLogs({
+                    limit: 1,
+                    type: "MEMBER_UPDATE",
+                });
 
-        const embed = new MessageEmbed()
-            .setColor("#878787");
+            const log = fetchedLogs.entries.first();
+            if (!log) return;
+            console.log(log)
 
-        if (newMember.communicationDisabledUntilTimestamp != undefined) {
-            if (diffDays < 0.8) {embed.setDescription(`🔇${diffMinutes} minute timout for <@${newMember.user.id}> by ${log.executor.tag}`)};
-            if (diffDays > 0.99 && diffDays < 5) {embed.setDescription(`🔇1 day timeout for <@${newMember.user.id}> by ${log.executor.tag}`)}
-            if (diffDays > 5) {embed.setDescription(`🔇1 week timeout for <@${newMember.user.id}> by ${log.executor.tag}`)};
-        } else {
-            embed.setDescription(`🔊 Timeout for <@${newMember.user.id}> is over`)
+            var timeDifference = newMember.communicationDisabledUntilTimestamp - new Date().getTime() 
+            var differenceDate = new Date(timeDifference);
+            var diffDays = differenceDate / (1000 * 3600 * 24);
+            var diffMinutes = differenceDate.getUTCMinutes() + 1;
+
+            const embed = new MessageEmbed()
+                .setColor("#878787");
+
+            if (newMember.communicationDisabledUntilTimestamp != undefined) {
+                if (diffDays < 0.8) { embed.setDescription(`🔇${diffMinutes} minute timout for <@${newMember.user.id}> by ${log.executor.tag}`) };
+                if (diffDays > 0.99 && diffDays < 5) { embed.setDescription(`🔇1 day timeout for <@${newMember.user.id}> by ${log.executor.tag}`) }
+                if (diffDays > 5) { embed.setDescription(`🔇1 week timeout for <@${newMember.user.id}> by ${log.executor.tag}`) };
+            } else {
+                embed.setDescription(`🔊 Timeout for <@${newMember.user.id}> is over`)
+            }
+
+            if (log.reason != null) { embed.addField("Reason:", log.reason, false) }
+
+            client.guilds.cache
+                .get(set[client.user.username].guildId)
+                .channels.cache.get(set[client.user.username].logChannel)
+                .send({ embeds: [embed] });
         }
-
-        if (log.reason != null) { embed.addField("Reason:", log.reason, false)}
-
-        client.guilds.cache
-            .get(set[client.user.username].guildId)
-            .channels.cache.get(set[client.user.username].logChannel)
-            .send({ embeds: [embed] });
     },
-    Mention: function(client, message) {
+    Mention: function (client, message) {
         try {
             if (message.content.toLowerCase().includes("nada") ||
                 message.content.toLowerCase().includes("na_da") &&
