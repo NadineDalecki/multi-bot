@@ -16,7 +16,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setColor("#edabea")
-                .setAuthor(message.author.username, message.author.avatarURL())
+                .setAuthor({name: message.author.username, iconURL: message.author.avatarURL(), url:"https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png"})
                 .setTitle(title)
                 .setImage(image)
                 .setFooter("From r/FoodPorn", "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png")
