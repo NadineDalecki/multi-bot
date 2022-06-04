@@ -205,7 +205,6 @@ module.exports = {
         var diffMinutes = differenceDate.getUTCMinutes() + 1;
 
         const embed = new MessageEmbed()
-            .setDescription(`**🔇for <@${newMember.user.id}> by ${log.executor.tag}**`)
             .setColor("#878787");
 
         if (newMember.communicationDisabledUntilTimestamp != undefined) {
@@ -213,7 +212,7 @@ module.exports = {
             if (diffDays > 0.99 && diffDays < 5) {embed.setDescription(`🔇1 day for <@${newMember.user.id}> by ${log.executor.tag}`)}
             if (diffDays > 5) {embed.setDescription(`🔇1 week for <@${newMember.user.id}> by ${log.executor.tag}`)};
         } else {
-           console.log(`🔊 Timeout for ${newMember.user.tag} was removed by ${log.executor.tag}`)
+            embed.setDescription(`🔊 Timeout for ${newMember.user.tag} is over`)
         }
 
         if (log.reason != null) { embed.addField("Reason:", log.reason, false)}
