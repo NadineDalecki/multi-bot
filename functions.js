@@ -53,7 +53,7 @@ module.exports = {
             credentials: {
                 private_key: process.env[
                     `PRIVATE_KEY_${client.user.username.toUpperCase()}`
-                ],
+                ].replace(/\\n/g, "\n"),
                 client_email:
                     process.env[`CLIENT_EMAIL_${client.user.username.toUpperCase()}`],
             },
@@ -61,7 +61,7 @@ module.exports = {
         const sessionClient = new dialogflow.SessionsClient(config);
         const sessionPath = sessionClient.projectAgentSessionPath(
             process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`],
-            message.author.id.substring(0, 8)
+            message.author.id.substring(0, 11)
         );
         const request = {
             session: sessionPath,
