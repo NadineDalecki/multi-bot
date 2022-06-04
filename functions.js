@@ -205,15 +205,15 @@ module.exports = {
         var diffMinutes = differenceDate.getUTCMinutes() + 1;
 
         const embed = new MessageEmbed()
-            .setDescription(`**🔇for <@${newMember.user.id}> by <@${log.executor.tag}>**`)
+            .setDescription(`**🔇for <@${newMember.user.id}> by ${log.executor.tag}**`)
             .setColor("#878787");
 
         if (newMember.communicationDisabledUntilTimestamp != undefined) {
-            if (diffDays < 0.8) {embed.setDescription(`🔇${diffMinutes} minutes for <@${newMember.user.id}> by <@${log.executor.tag}>`)};
-            if (diffDays > 0.99 && diffDays < 5) {embed.setDescription(`🔇1 day for <@${newMember.user.id}> by <@${log.executor.tag}>`)}
-            if (diffDays > 5) {embed.setDescription(`🔇1 week for <@${newMember.user.id}> by <@${log.executor.tag}>`)};
+            if (diffDays < 0.8) {embed.setDescription(`🔇${diffMinutes} minutes for <@${newMember.user.id}> by ${log.executor.tag}`)};
+            if (diffDays > 0.99 && diffDays < 5) {embed.setDescription(`🔇1 day for <@${newMember.user.id}> by ${log.executor.tag}`)}
+            if (diffDays > 5) {embed.setDescription(`🔇1 week for <@${newMember.user.id}> by ${log.executor.tag}`)};
         } else {
-           console.log(`🔊 Timeout for ${newMember.user.tag} was removed by <@${log.executor.tag}>`)
+           console.log(`🔊 Timeout for ${newMember.user.tag} was removed by ${log.executor.tag}`)
         }
 
         if (log.reason != null) { embed.addField("Reason:", log.reason, false)}
