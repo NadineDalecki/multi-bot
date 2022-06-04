@@ -19,7 +19,7 @@ module.exports = {
                 .setAuthor({name: message.author.username, iconURL: message.author.avatarURL(), url:"https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png"})
                 .setTitle(title)
                 .setImage(image)
-                .setFooter("From r/FoodPorn", "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png")
+                .setFooter({text: "From r/FoodPorn", iconURL: "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png"})
 
             if (message.channel.id === "748184563800473673" || message.channel.type == "DM" || message.channel.id === "718176504437276682") {
                 message.channel.send({ embeds: [embed] })
