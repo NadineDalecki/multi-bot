@@ -146,10 +146,10 @@
             "702591687096270848",
             "425225020382642176"
         ],
-        "logChannel": "718176504437276682",
+        "logChannel": "724967322867204096",
         "logDel": false,
         "logEdit": false,
-        "logTimeout": false,
+        "logTimeout": true,
         "status": "online",
         "activity": {
             "name": "your questions ❓",
