@@ -8,7 +8,10 @@
             "425225020382642176",
             "855095019568627765"
         ],
-        "logChannel": "718176504437276682",
+        "logChannel": "855086292801814538",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": true,
         "status": "dnd",
         "activity": {
             "name": "shit talking",
@@ -33,6 +36,9 @@
         "adminRoles": [
                     ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "all the new people",
@@ -47,6 +53,9 @@
         "adminRoles": [
                     ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "the Greek Chorus",
@@ -63,26 +72,13 @@
             "425225020382642176"
         ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "your ideas 💡",
             "type": "LISTENING",
-            "url": "https://www.twitch.tv/"
-        }
-    },
-    "KVN": {
-        "spreadsheetID": "1y_M-lWfdLIH9F2mFlwh0wSZXCd6SWxaKg7-5t555gNc",
-        "guildId": "707307751033798666",
-        "prefix": "?",
-        "adminRoles": [
-            "724966816056606780",
-            "763833830233866291"
-        ],
-        "logChannel": "718176504437276682",
-        "status": "online",
-        "activity": {
-            "name": "the beta testers",
-            "type": "WATCHING",
             "url": "https://www.twitch.tv/"
         }
     },
@@ -96,6 +92,9 @@
             "425225020382642176"
         ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "your questions ❓",
@@ -111,6 +110,9 @@
             "425225020382642176"
         ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "dnd",
          "activity": {
             "name": "himself",
@@ -126,6 +128,9 @@
             
         ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "the Specialists 👀",
@@ -141,6 +146,9 @@
             
         ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "the Game 💯",
@@ -156,6 +164,9 @@
             "421641048155226113"
         ],
         "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "in Zero Gravity",
