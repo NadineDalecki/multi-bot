@@ -208,9 +208,9 @@ module.exports = {
             .setColor("#878787");
 
         if (newMember.communicationDisabledUntilTimestamp != undefined) {
-            if (diffDays < 0.8) embed.addField("Duration:", diffMinutes + " m", true);
-            if (diffDays > 0.99 && diffDays < 5) {embed.addField("Duration:", "1 Day", true)}
-            if (diffDays > 5) embed.addField("Duration:", "1 Week", true);
+            if (diffDays < 0.8) {embed.setDescription(`🔇${diffMinutes} minutes for <@${newMember.user.id}> by <@${log.executor.id}>`)};
+            if (diffDays > 0.99 && diffDays < 5) {embed.setDescription(`🔇1 day for <@${newMember.user.id}> by <@${log.executor.id}>`)}
+            if (diffDays > 5) {embed.setDescription(`🔇1 week for <@${newMember.user.id}> by <@${log.executor.id}>`)};
         } else {
             embed.setDescription(
                 `**🔊 Timeout for ${newMember.user.tag} was removed by <@${log.executor.id}>**`

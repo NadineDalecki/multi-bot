@@ -29,6 +29,24 @@
             "noDivision" : "847141969235148831"
         }
     },
+    "Avrel": {
+        "spreadsheetID": "1LJ1feFfh69kEIM_oSfcSDvB-wYfrOzOj1Bdz6IIvhAI",
+        "guildId": "424911215714631690",
+        "prefix": "?",
+        "adminRoles": [
+            
+        ],
+        "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
+        "status": "online",
+        "activity": {
+            "name": "the Game 💯",
+            "type": "PLAYING",
+            "url": "https://discord.com"
+        }
+    },
      "Ewan": {
         "spreadsheetID": "1bGlnkyVZv8KCRcZxmCGN9gQJRr_vwMLlKIAqr6NCKtE",
         "guildId": "674732735247679498",
@@ -82,6 +100,40 @@
             "url": "https://www.twitch.tv/"
         }
     },
+    "Igle": {
+        "spreadsheetID": "1796GF3ICIwm-qsmnynXCvxpGOmSwsWHpWjXxQBhzZO0",
+        "guildId": "838301618167480350",
+        "prefix": "?",
+        "adminRoles": [
+            
+        ],
+        "logChannel": "718176504437276682",
+        "logDel": false,
+        "logEdit": false,
+        "logTimeout": false,
+        "status": "online",
+        "activity": {
+            "name": "the Specialists 👀",
+            "type": "WATCHING",
+            "url": "https://discord.com"
+        }
+    },
+    "KVN": {
+        "spreadsheetID": "",
+        "guildId": "707307751033798666",
+        "prefix": "?",
+        "adminRoles": [
+            "724966816056606780",
+            "763833830233866291"
+        ],
+        "logChannel": "748550054964494468",
+        "status": "online",
+        "activity": {
+            "name": "the beta testers",
+            "type": "WATCHING",
+            "url": "https://www.twitch.tv/"
+        }
+    },
     "Mel": {
         "spreadsheetID": "1b-2t41LO_U5j8gJfxPS_rdg4Y8kINwMgSqUKpNdf4RE",
         "guildId": "326412222119149578",
@@ -118,42 +170,6 @@
             "name": "himself",
             "type": "LISTENING",
             "url": "https://www.twitch.tv/"
-        }
-    },
-    "Igle": {
-        "spreadsheetID": "1796GF3ICIwm-qsmnynXCvxpGOmSwsWHpWjXxQBhzZO0",
-        "guildId": "838301618167480350",
-        "prefix": "?",
-        "adminRoles": [
-            
-        ],
-        "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
-        "status": "online",
-        "activity": {
-            "name": "the Specialists 👀",
-            "type": "WATCHING",
-            "url": "https://discord.com"
-        }
-    },
-     "Avrel": {
-        "spreadsheetID": "1LJ1feFfh69kEIM_oSfcSDvB-wYfrOzOj1Bdz6IIvhAI",
-        "guildId": "424911215714631690",
-        "prefix": "?",
-        "adminRoles": [
-            
-        ],
-        "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
-        "status": "online",
-        "activity": {
-            "name": "the Game 💯",
-            "type": "PLAYING",
-            "url": "https://discord.com"
         }
     },
     "TG Bot": {

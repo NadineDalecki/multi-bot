@@ -135,5 +135,38 @@ module.exports = {
                 true
             )
         return embed
+            },
+            VirtexBanner: function() {
+                const embed = new MessageEmbed().setImage(
+                    "https://cdn.discordapp.com/attachments/725062405570166874/856581748094795796/Virtex_Stadium_Discord_Banner.png"
+                );
+                return embed
+            },
+            VirtexWelcome: function() {
+                const embed = new MessageEmbed()
+                    .setColor("#0d171a")
+                    .setDescription(
+                        "This server is intended for users, developers and event organisers using the platform Virtex Stadium. Here you can find **support, discuss the events and broadcasts or just chat with people**. On the left you can find all of the channels, please join the ones you're interested in talking in and have a great time!\n\u200b\n")
+                    .addField(
+                        "RULES",
+                        "1. Use correct channels specific to your needs and region.\n2. Not tolerated: Spamming, name calling, harassing or threatening.\n3. Respect our staff and their decisions.\n4. Do not post links to malicious content.\n5. Do not advertise/promote content without permission.\n6. Impersonating others, especially staff or admins is not allowed.\n7. Our staff reserves the right to kick or ban a person.\n\u200b\nPlease note that our staff may not always be available. Discord is not an official support platform for Virtex Stadium and as such if no one is available you can request help via our [Contact page](https://virtexstadium.com/contact).\n\u200b\n")
+                    .addField(
+                        "HELPFUL LINKS",
+                        "[Discord Invite](https://virtexstadium.com/discord)\u2001[Website](https://virtexstadium.com/)\u2001[Twitter](https://virtexstadium.com/twitter)\u2001[Facebook](https://virtexstadium.com/facebook)\u2001[LinkedIn](https://virtexstadium.com/linkedin)\u2001[Youtube](https://virtexstadium.com/youtube)\u2001[Twitch](https://virtexstadium.com/twitch)\n\u200b\n",
+                        true)
+                    .addField(
+                        "ROLES",
+                        "Please react with a corresponding emoji to get the desired role.\n\u200b\n:flag_eu: for <@&725059685417484430>\n<:uscanada:725336757133901924> for <@&725059639397580823>\n<:world:725396078832123958> for <@&725059833107054602>"
+                    );
+                return embed
+            },
+            Bug: function() {
+                const embed = new MessageEmbed()
+                    .setColor("#b00000")
+                    .setAuthor("🐛 Found a bug | error | problem?")
+                    .setDescription("The app is still in an early development stage and the closed beta is intended to help us fixing anything you may come across :thx:\n\u200b\n1️⃣ **Check the list below** if it's already known or excluded from the test - If so, you don't need to do anything.\n\u200b\n2️⃣ If you see a **bugsplat** pop up on your screen please provide some information on what you were doing before the crash and press the ‘Send’ button. This report is sent straight to Virtex and nowhere else! **OR** if you do not see a bugsplat but still think you encountered an issue you can report it on our [Support page](https://virtex.atlassian.net/servicedesk/customer/portal/1)"
+                    )
+                return embed
+                
             }
 }
