@@ -186,7 +186,7 @@ module.exports = {
     },
     LogTimeout: async function (client, oldMember, newMember) {
         const fetchedLogs = await client.guilds.cache
-            .get("707307751033798666")
+            .get(set[client.user.username].guildId)
             .fetchAuditLogs({
                 limit: 1,
                 type: "MEMBER_UPDATE",
