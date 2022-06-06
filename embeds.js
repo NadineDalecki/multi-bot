@@ -164,7 +164,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                     .setColor("#b00000")
                     .setAuthor("🐛 Found a bug | error | problem?")
-                    .setDescription("The app is still in an early development stage and the closed beta is intended to help us fixing anything you may come across :thx:\n\u200b\n1️⃣ **Check the list below** if it's already known or excluded from the test - If so, you don't need to do anything.\n\u200b\n2️⃣ If you see a **bugsplat** pop up on your screen please provide some information on what you were doing before the crash and press the ‘Send’ button. This report is sent straight to Virtex and nowhere else! **OR** if you do not see a bugsplat but still think you encountered an issue you can report it on our [Support page](https://virtex.atlassian.net/servicedesk/customer/portal/1)"
+                    .setDescription("The app is still in an early development stage and the closed beta is intended to help us fixing anything you may come across <:thx:744847943747764275>\n\u200b\n1️⃣ **Check the list below** if it's already known or excluded from the test - If so, you don't need to do anything.\n\u200b\n2️⃣ If you see a **bugsplat** pop up on your screen please provide some information on what you were doing before the crash and press the ‘Send’ button. This report is sent straight to Virtex and nowhere else! **OR** if you do not see a bugsplat but still think you encountered an issue you can report it on our [Support page](https://virtex.atlassian.net/servicedesk/customer/portal/1)"
                     )
                 return embed
                 
