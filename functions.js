@@ -197,7 +197,8 @@ module.exports = {
 
             const log = fetchedLogs.entries.first();
             if (!log) return;
-            console.log(log)
+            console.log(log.target.tag)
+            console.log(log.executor.tag)
 
             var timeDifference = newMember.communicationDisabledUntilTimestamp - new Date().getTime() 
             var differenceDate = new Date(timeDifference);
