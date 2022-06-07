@@ -114,6 +114,7 @@ module.exports = {
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
                 const inline = embed[0].Field_1_Inline || "false"
+                console.log(embed[0].Field_1_Inline)
                 newEmbed.addField({name: embed[0].Field_1_Title, value: embed[0].Field_1_Text, inline});
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
