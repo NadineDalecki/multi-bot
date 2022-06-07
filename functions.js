@@ -113,23 +113,23 @@ module.exports = {
                 newEmbed.setFooter(embed[0].Footer_Text, embed[0].Footer_Avatar_URL);
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
-                newEmbed.addField( embed[0].Field_1_Title, embed[0].Field_1_Text, embed[0].Field_1_Text);
+                newEmbed.addField( embed[0].Field_1_Title, embed[0].Field_1_Text, embed[0].Field_1_Inline);
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
-                newEmbed.addField(embed[0].Field_2_Title, embed[0].Field_2_Text, embed[0].Field_2_Text);
+                newEmbed.addField(embed[0].Field_2_Title, embed[0].Field_2_Text, embed[0].Field_2_Inline);
             }
             if (embed[0].Field_3_Title && embed[0].Field_3_Text) {
-                newEmbed.addField(embed[0].Field_3_Title, embed[0].Field_3_Text, embed[0].Field_3_Text);
+                newEmbed.addField(embed[0].Field_3_Title, embed[0].Field_3_Text, embed[0].Field_3_Inline);
             }
             if (embed[0].Field_4_Title && embed[0].Field_4_Text) {
-                newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text, embed[0].Field_4_Text);
+                newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text, embed[0].Field_4_Inline);
             }
             if (embed[0].Field_5_Title && embed[0].Field_5_Text) {
-                newEmbed.addField(embed[0].Field_5_Title, embed[0].Field_5_Text, embed[0].Field_5_Text);
+                newEmbed.addField(embed[0].Field_5_Title, embed[0].Field_5_Text, embed[0].Field_5_Inline);
             }
             return newEmbed;
         } catch (e) {
-            console.log(`Looks like there is a prolem with some spreadsheet data!`)
+            console.log(`Looks like there is a problem with some spreadsheet data!`)
         }
     },
     LogDelete: async function (client, message) {
