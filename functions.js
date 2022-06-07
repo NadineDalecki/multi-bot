@@ -113,8 +113,8 @@ module.exports = {
                 newEmbed.setFooter(embed[0].Footer_Text, embed[0].Footer_Avatar_URL);
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
-                const inline = embed[0].Field_1_Inline || "false"
                 console.log(embed[0].Field_1_Inline)
+                const inline = embed[0].Field_1_Inline || "false"
                 newEmbed.addField({name: embed[0].Field_1_Title, value: embed[0].Field_1_Text, inline});
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
@@ -134,9 +134,7 @@ module.exports = {
             }
             return newEmbed;
         } catch (e) {
-            console.log(
-                `Looks like there is a prolem with some spreadsheet data! ${client.username}`
-            );
+            console.log(`Looks like there is a prolem with some spreadsheet data!`)
         }
     },
     LogDelete: async function (client, message) {
