@@ -113,20 +113,16 @@ module.exports = {
                 newEmbed.setFooter(embed[0].Footer_Text, embed[0].Footer_Avatar_URL);
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
-                const inline = embed[0].Field_1_Inline || false
-                newEmbed.addField({name: embed[0].Field_1_Title, value: embed[0].Field_1_Text, inline});
+                newEmbed.addField( embed[0].Field_1_Title, embed[0].Field_1_Text);
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
-                const inline = embed[0].Field_2_Inline || false
-                newEmbed.addField({name:embed[0].Field_2_Title, value: embed[0].Field_2_Text, inline});
+                newEmbed.addField(embed[0].Field_2_Title, embed[0].Field_2_Text);
             }
             if (embed[0].Field_3_Title && embed[0].Field_3_Text) {
-                const inline = embed[0].Field_3_Inline || false
-                newEmbed.addField({name:embed[0].Field_3_Title, value: embed[0].Field_3_Text, inline});
+                newEmbed.addField(embed[0].Field_3_Title, embed[0].Field_3_Text);
             }
             if (embed[0].Field_4_Title && embed[0].Field_4_Text) {
-                const inline = embed[0].Field_4_Inline || false
-                newEmbed.addField({name:embed[0].Field_4_Title, value: embed[0].Field_4_Text, inline});
+                newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text);
             }
             if (embed[0].Field_5_Title && embed[0].Field_5_Text) {
                 newEmbed.addField({text: embed[0].Field_5_Title, iconURL: embed[0].Field_5_Text, inline: embed[0].Field_5_Inline});
