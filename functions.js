@@ -114,19 +114,19 @@ module.exports = {
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
                 console.log(embed[0].Field_1_Inline)
-                const inline = embed[0].Field_1_Inline || "false"
+                const inline = embed[0].Field_1_Inline || false
                 newEmbed.addField({name: embed[0].Field_1_Title, value: embed[0].Field_1_Text, inline});
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
-                const inline = embed[0].Field_2_Inline || "false"
+                const inline = embed[0].Field_2_Inline || false
                 newEmbed.addField({name:embed[0].Field_2_Title, value: embed[0].Field_2_Text, inline});
             }
             if (embed[0].Field_3_Title && embed[0].Field_3_Text) {
-                const inline = embed[0].Field_2_Inline || "false"
+                const inline = embed[0].Field_2_Inline || false
                 newEmbed.addField({name:embed[0].Field_3_Title, value: embed[0].Field_3_Text, inline});
             }
             if (embed[0].Field_4_Title && embed[0].Field_4_Text) {
-                const inline = embed[0].Field_2_Inline || "false"
+                const inline = embed[0].Field_2_Inline || false
                 newEmbed.addField({name:embed[0].Field_4_Title, value: embed[0].Field_4_Text, inline});
             }
             if (embed[0].Field_5_Title && embed[0].Field_5_Text) {
