@@ -90,11 +90,11 @@ module.exports = {
                 newEmbed.setURL(embed[0].URL);
             }
             if (embed[0].Author_Text !== "undefined") {
-                newEmbed.setAuthor(
-                    embed[0].Author_Text,
-                    embed[0].Author_Avatear_Link,
+                newEmbed.setAuthor({name:
+                    embed[0].Author_Text, iconURL:
+                    embed[0].Author_Avatear_Link, url:
                     embed[0].Author_URL
-                );
+            });
             }
             if (embed[0].Description !== "undefined") {
                 newEmbed.setDescription(embed[0].Description);
@@ -124,7 +124,7 @@ module.exports = {
                 newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text);
             }
             if (embed[0].Field_5_Title && embed[0].Field_5_Text) {
-                newEmbed.addField(embed[0].Field_5_Title, embed[0].Field_5_Text);
+                newEmbed.addField({text: embed[0].Field_5_Title, iconURL: embed[0].Field_5_Text});
             }
             return newEmbed;
         } catch (e) {
