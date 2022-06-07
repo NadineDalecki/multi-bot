@@ -113,19 +113,19 @@ module.exports = {
                 newEmbed.setFooter(embed[0].Footer_Text, embed[0].Footer_Avatar_URL);
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
-                newEmbed.addField( embed[0].Field_1_Title, embed[0].Field_1_Text);
+                newEmbed.addField( embed[0].Field_1_Title, embed[0].Field_1_Text, embed[0].Field_1_Text);
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
-                newEmbed.addField(embed[0].Field_2_Title, embed[0].Field_2_Text);
+                newEmbed.addField(embed[0].Field_2_Title, embed[0].Field_2_Text, embed[0].Field_2_Text);
             }
             if (embed[0].Field_3_Title && embed[0].Field_3_Text) {
-                newEmbed.addField(embed[0].Field_3_Title, embed[0].Field_3_Text);
+                newEmbed.addField(embed[0].Field_3_Title, embed[0].Field_3_Text, embed[0].Field_3_Text);
             }
             if (embed[0].Field_4_Title && embed[0].Field_4_Text) {
-                newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text);
+                newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text, embed[0].Field_4_Text);
             }
             if (embed[0].Field_5_Title && embed[0].Field_5_Text) {
-                newEmbed.addField(embed[0].Field_5_Title, embed[0].Field_5_Text);
+                newEmbed.addField(embed[0].Field_5_Title, embed[0].Field_5_Text, embed[0].Field_5_Text);
             }
             return newEmbed;
         } catch (e) {
