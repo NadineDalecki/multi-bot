@@ -1,16 +1,19 @@
-const Embed = require("../embeds.js")
-
 module.exports = {
-    name: "em",
-    execute(client, message, functions, args, set, MessageEmbed) {
+    name: "e",
+    async execute(client, message, functions, args, set) {
         message.delete().catch(_ => { });
         const adminRoles = set[client.user.username].adminRoles;
-        if (message.channel.type == "DM"||
+        if (message.channel.type == "DM" ||
             message.member.roles.cache.some(r => adminRoles.includes(r.id)) ||
             message.member.hasPermission("ADMINISTRATOR")
         ) {
-            const embed = Embed[`${args}`]()
-            message.channel.send({ embeds: [embed] });
+            const data = await functions.SpreadsheetGET(client);
+            const sheet = data.doc.sheetsByTitle["Embeds"];
+            const rows = await sheet.getRows();
+
+            let embed = rows.filter(embed => embed.name == args.join(" "));
+            const finalEmbed = functions.EmbedBuilder(embed);
+            message.channel.send({ embeds: [finalEmbed] });;
         }
     }
 };

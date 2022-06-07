@@ -113,7 +113,7 @@ module.exports = {
                 newEmbed.setFooter(embed[0].Footer_Text, embed[0].Footer_Avatar_URL);
             }
             if (embed[0].Field_1_Title && embed[0].Field_1_Text) {
-                newEmbed.addField( embed[0].Field_1_Title, embed[0].Field_1_Text, embed[0].Field_1_Inline);
+                newEmbed.addField(embed[0].Field_1_Title, embed[0].Field_1_Text, embed[0].Field_1_Inline);
             }
             if (embed[0].Field_2_Title && embed[0].Field_2_Text) {
                 newEmbed.addField(embed[0].Field_2_Title, embed[0].Field_2_Text, embed[0].Field_2_Inline);
