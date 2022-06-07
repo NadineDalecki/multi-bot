@@ -92,9 +92,9 @@ module.exports = {
             }
             if (embed[0].Author_Text !== "undefined") {
                 newEmbed.setAuthor({name:
-                    embed[0].Author_Text, iconURL:
-                    embed[0].Author_Avatear_Link, url:
-                    embed[0].Author_URL
+                    embed[0].Author_Text, 
+                    iconURL:embed[0].Author_Avatar_Link, 
+                    url: embed[0].Author_URL
             });
             }
             if (embed[0].Description !== "undefined") {

@@ -42,19 +42,5 @@ module.exports = {
 
             }, 1000);
         }
-    },
-    Mo: async function(reaction, client, user, set, MessageEmbed) {
-
-        const guild = client.guilds.cache.get(set[client.user.username].guildId)
-
-        if (reaction.message.channel.id == "718176504437276682") {
-            const receivedEmbed = reaction.message.embeds[0];
-
-            reaction.message.fetch().then(message => {
-                const allReactions = reaction.message.reactions.cache.map((m) => m.emoji.name)
-                receivedEmbed.setDescription(allReactions.join("\n"));
-                reaction.message.edit({ embeds: [receivedEmbed] });
-            })
-        }
     }
 }

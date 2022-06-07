@@ -43,11 +43,5 @@ module.exports = {
             
         }, 1000);
     }
-},
-    Mo: async function(reaction, client, user, set, MessageEmbed) {
-
-        const guild = client.guilds.cache.get(set[client.user.username].guildId)
-
-    }
-    
+}
 }
