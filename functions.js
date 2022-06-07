@@ -125,7 +125,7 @@ module.exports = {
                 newEmbed.addField(embed[0].Field_4_Title, embed[0].Field_4_Text);
             }
             if (embed[0].Field_5_Title && embed[0].Field_5_Text) {
-                newEmbed.addField({text: embed[0].Field_5_Title, iconURL: embed[0].Field_5_Text, inline: embed[0].Field_5_Inline});
+                newEmbed.addField(embed[0].Field_5_Title, embed[0].Field_5_Text);
             }
             return newEmbed;
         } catch (e) {
