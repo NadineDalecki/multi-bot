@@ -14,7 +14,7 @@ module.exports = {
             let embed = rows.filter(embed => embed.name == args.join(" "));
             const finalEmbed = functions.EmbedBuilder(embed);
             console.log(embed[0].mention)
-            if(!embed[0].mention){
+            if(embed[0].mention){
                 message.channel.send(embed[0].mention)
             }
             message.channel.send({ embeds: [finalEmbed] });;
