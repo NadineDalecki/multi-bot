@@ -29,7 +29,8 @@ module.exports = {
               //message.author.send("Hm. Sorry I can't sign you up right now. We have to wait until another test is announced! 👀")
             }
             catch (e) {
-                message.author.send("Looks like I have trouble finding your Confidentiality Agreement. 🤔 Did you maybe change your Discord tag (name#1234)? You can update it in your form submission and try again afterwards!")
+                message.react("✉️")
+                message.author.send("Looks like I have trouble finding your Confidentiality Agreement. 🤔 Did you maybe change your Discord tag (name#1234)? You can update it in your form submission and try again afterwards! ")
             }
         }
         
