@@ -1,10 +1,12 @@
 module.exports = {
+
+    //AFFEN LFT EMBED
     Affen: async function(reaction, client, user, set, MessageEmbed) {
         const guild = client.guilds.cache.get(set[client.user.username].guildId)
 
         if (reaction.message.id == "925398083796340797") {
 
-            guild.members.fetch(user).then((reactingUser) => { reactingUser.roles.add("549925842646597651") }) //LFT
+            guild.members.fetch(user).then((reactingUser) => { reactingUser.roles.add("549925842646597651") }) 
 
             guild.members.fetch()
 
