@@ -133,6 +133,7 @@ module.exports = {
         }
     },
     LogDelete: async function (client, message) {
+        try {
         if (!message.guild) return;
         const fetchedLogs = await message.guild.fetchAuditLogs({
             limit: 1,
@@ -169,8 +170,14 @@ module.exports = {
                 .channels.cache.get(set[client.user.username].logChannel)
                 .send({ embeds: [embed] });
         }
+    }
+    catch(e){
+
+        console.log("I could not handle this deleted message!")
+    }
     },
     LogEdit: async function (client, oldMessage, newMessage) {
+        try{
         if (!oldMessage.author) return;
         var embed = new MessageEmbed()
             .setDescription(
@@ -182,8 +189,14 @@ module.exports = {
             .get(set[client.user.username].guildId)
             .channels.cache.get(set[client.user.username].logChannel)
             .send({ embeds: [embed] });
+        }
+        catch(e){
+
+            console.log("I could not handle this edited message!")
+        }
     },
     LogTimeout: async function (client, oldMember, newMember) {
+        try{
 
         if (oldMember.isCommunicationDisabled() != newMember.isCommunicationDisabled()) {
 
@@ -222,6 +235,11 @@ module.exports = {
                 .channels.cache.get(set[client.user.username].logChannel)
                 .send({ embeds: [embed] });
         }
+    }
+    catch(e){
+
+        console.log("I could not handle this timeout!")
+    }
     },
     Mention: function (client, message) {
         try {
