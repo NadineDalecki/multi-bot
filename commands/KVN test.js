@@ -1,3 +1,5 @@
+const { GoogleSpreadsheet } = require("google-spreadsheet");
+
 module.exports = {
     name: "test",
     async execute(client, message, functions, args, set) {
