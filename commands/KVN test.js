@@ -3,7 +3,7 @@ const { GoogleSpreadsheet } = require("google-spreadsheet");
 module.exports = {
     name: "test",
     async execute(client, message, functions, args, set) {
-        {
+      message.delete().catch(_ => { });
              if (client.user.username === "KVN") {
 
               const doc = new GoogleSpreadsheet("1y_M-lWfdLIH9F2mFlwh0wSZXCd6SWxaKg7-5t555gNc");
@@ -33,7 +33,7 @@ module.exports = {
                 message.author.send("Looks like I have trouble finding your Confidentiality Agreement. 🤔 Did you maybe change your Discord tag (name#1234)? You can update it in your form submission and try again afterwards!")
             }
         }
-        }
+        
     }
 };
 
