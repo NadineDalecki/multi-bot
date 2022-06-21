@@ -3,7 +3,6 @@ const { GoogleSpreadsheet } = require("google-spreadsheet");
 module.exports = {
     name: "test",
     async execute(client, message, functions, args, set) {
-      message.delete().catch(_ => { });
              if (client.user.username === "KVN") {
 
               const doc = new GoogleSpreadsheet("1y_M-lWfdLIH9F2mFlwh0wSZXCd6SWxaKg7-5t555gNc");
