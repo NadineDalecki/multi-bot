@@ -221,11 +221,11 @@ module.exports = {
                 .setColor("#878787");
 
             if (newMember.communicationDisabledUntilTimestamp != undefined) {
-                if (diffDays < 0.8) { embed.setDescription(`🔇${diffMinutes} minute timout for <@${newMember.user.id}> by ${log.executor.tag}`) };
-                if (diffDays > 0.99 && diffDays < 5) { embed.setDescription(`🔇1 day timeout for <@${newMember.user.id}> by ${log.executor.tag}`) }
-                if (diffDays > 5) { embed.setDescription(`🔇1 week timeout for <@${newMember.user.id}> by ${log.executor.tag}`) };
+                if (diffDays < 0.8) { embed.setDescription(`🔇${diffMinutes} minute timout for <@${newMember.user.tag}> (ID ${newMember.user.id} ) by ${log.executor.tag}`) };
+                if (diffDays > 0.99 && diffDays < 5) { embed.setDescription(`🔇1 day timeout for <@${newMember.user.tag}> (ID ${newMember.user.id} by ${log.executor.tag}`) }
+                if (diffDays > 5) { embed.setDescription(`🔇1 week timeout for <@${newMember.user.tag}> (ID ${newMember.user.id} by ${log.executor.tag}`) };
             } else {
-                embed.setDescription(`🔊 Timeout for <@${newMember.user.id}> is over`)
+                embed.setDescription(`🔊 Timeout for <@${newMember.user.tag}> (ID ${newMember.user.id} is over`)
             }
 
             if (log.reason != null) { embed.addField("Reason:", log.reason, false) }
