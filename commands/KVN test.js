@@ -20,9 +20,9 @@ module.exports = {
             const cells = await sheet.loadCells('B2:D5')
            
           try {
-               let userRow = rows.filter(row => row["Discord Username"] == message.author.tag);
+              /* let userRow = rows.filter(row => row["Discord Username"] == message.author.tag);
                 
-                /*userRow[0]["Test 26.07.2022"] = "1"
+                userRow[0]["Test 26.07.2022"] = "1"
                 await userRow[0].save();
                 message.react("✅")
                 message.author.send("I added you to our list. We will send out Oculus invitations about 30 minutes before the test. Don't forget to check our <#783287669613527041> if you run into any issues or ask for help in <#724969092506976286>! looking forward to see you in the Stadium")
