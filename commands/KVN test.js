@@ -28,11 +28,12 @@ module.exports = {
                 await userRow[0].save();
 
                 message.react("✅")
-                message.reply("I added you to our list. We will send out Oculus invitations Friday before the test. Don't forget to check our <#783287669613527041> if you run into any issues or ask for help in <#724969092506976286>! looking forward to see you in the Stadium!")
+                message.author.send("I added you to our list. We will send out Oculus invitations Friday before the test. Don't forget to check our <#783287669613527041> if you run into any issues or ask for help in <#724969092506976286>! looking forward to see you in the Stadium!")
               //message.author.send("Hm. Sorry I can't sign you up right now. We have to wait until another test is announced! 👀")
             }
             catch (e) {
-              message.reply("Looks like I have trouble finding your Confidentiality Agreement. 🤔 Did you maybe change your Discord tag (name#1234)? You can update it in your form submission and try again afterwards!")
+              message.react("📥")
+              message.author.send("Looks like I have trouble finding your Confidentiality Agreement. 🤔 Did you maybe change your Discord tag (name#1234)? You can update it in your form submission and try again afterwards!")
             }
         }
         }
