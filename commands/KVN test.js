@@ -25,7 +25,7 @@ module.exports = {
             console.log(cells)
            
           try {
-               let userRow = rows.filter(row => row["Discord Username"] == message.author.tag);
+               let userRow = rows.filter(row => row["Discord Tag (name#1234)"] == message.author.tag);
                 console.log(userRow[0])
 
                 userRow[0]["Test"] = "1"
