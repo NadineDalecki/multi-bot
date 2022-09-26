@@ -6,7 +6,7 @@ module.exports = {
         {
              if (client.user.username === "KVN") {
               console.log(client.user.username)
-            const data = await functions.SpreadsheetGET("1y_M-lWfdLIH9F2mFlwh0wSZXCd6SWxaKg7-5t555gNc");
+            const data = await functions.SpreadsheetGET(client);
 
             const sheet = data.doc.sheetsByTitle["Form responses 1"];
             const rows = await sheet.getRows();
