@@ -17,12 +17,8 @@ module.exports = {
             
 
             const sheet = doc.sheetsByTitle["Form responses 1"];
-            console.log("check")
-            console.log(sheet)
             const rows = await sheet.getRows();
-            console.log(rows)
             const cells = await sheet.loadCells()
-            console.log(cells)
            
           try {
                let userRow = rows.filter(row => row["Discord Tag (name#1234)"] == message.author.tag);
