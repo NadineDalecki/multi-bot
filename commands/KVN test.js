@@ -5,7 +5,7 @@ module.exports = {
     async execute(client, message, functions, args, set) {
         {
              if (client.user.username === "KVN") {
-              console.log(client.user)
+              console.log(client.user.username)
             const data = await functions.SpreadsheetGET("1y_M-lWfdLIH9F2mFlwh0wSZXCd6SWxaKg7-5t555gNc");
 
             const sheet = data.doc.sheetsByTitle["Form responses 1"];
