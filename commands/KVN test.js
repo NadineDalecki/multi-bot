@@ -5,10 +5,18 @@ module.exports = {
     async execute(client, message, functions, args, set) {
         {
              if (client.user.username === "KVN") {
-            const data = await functions.SpreadsheetGET(client);
+              const doc = new GoogleSpreadsheet("1y_M-lWfdLIH9F2mFlwh0wSZXCd6SWxaKg7-5t555gNc");
+              await doc.useServiceAccountAuth({
+                  client_email:
+                      process.env[`CLIENT_EMAIL_${client.user.username.toUpperCase()}`],
+                  private_key: process.env[
+                      `PRIVATE_KEY_${client.user.username.toUpperCase()}`
+                  ].replace(/\\n/g, "\n"),
+              });
+              await doc.loadInfo();
             
 
-            const sheet = data.doc.sheetsByTitle["Form responses 1"];
+            const sheet = doc.sheetsByTitle["Form responses 1"];
             console.log("check")
             console.log(sheet)
             const rows = await sheet.getRows();
