@@ -5,10 +5,12 @@ module.exports = {
     async execute(client, message, functions, args, set) {
         {
              if (client.user.username === "KVN") {
-              console.log(client.user.username)
             const data = await functions.SpreadsheetGET(client);
+            
 
             const sheet = data.doc.sheetsByTitle["Form responses 1"];
+            console.log("check")
+            console.log(sheet)
             const rows = await sheet.getRows();
             const cells = await sheet.loadCells('B2:D5')
            
