@@ -20,7 +20,7 @@ module.exports = {
             console.log("check")
             console.log(sheet)
             const rows = await sheet.getRows();
-            const cells = await sheet.loadCells('A1:S382')
+            const cells = await sheet.loadCells()
            
           try {
                let userRow = rows.filter(row => row["Discord Username"] == message.author.tag);
