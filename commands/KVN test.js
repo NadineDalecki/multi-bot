@@ -20,11 +20,13 @@ module.exports = {
             console.log("check")
             console.log(sheet)
             const rows = await sheet.getRows();
+            console.log(rows)
             const cells = await sheet.loadCells()
+            console.log(cells)
            
           try {
                let userRow = rows.filter(row => row["Discord Username"] == message.author.tag);
-                //console.log(userRow[0])
+                console.log(userRow[0])
 
                 userRow[0]["Test"] = "1"
                 await userRow[0].save();
