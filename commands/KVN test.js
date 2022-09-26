@@ -28,7 +28,7 @@ module.exports = {
                 await userRow[0].save();
 
                 message.react("✅")
-                message.reply("I added you to our list. We will send out Oculus invitations about 30 minutes before the test. Don't forget to check our <#783287669613527041> if you run into any issues or ask for help in <#724969092506976286>! looking forward to see you in the Stadium")
+                message.reply("I added you to our list. We will send out Oculus invitations Friday before the test. Don't forget to check our <#783287669613527041> if you run into any issues or ask for help in <#724969092506976286>! looking forward to see you in the Stadium!")
               //message.author.send("Hm. Sorry I can't sign you up right now. We have to wait until another test is announced! 👀")
             }
             catch (e) {
