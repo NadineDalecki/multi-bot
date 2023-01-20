@@ -5,7 +5,7 @@ module.exports = {
         if (message.channel.type == "DM" ||
             message.mentions.has(client.user.id)) {
            
-            const answer = await functions.DialogflowQuery(client, message);
+                const answer = await functions.DialogflowQuery(client, message.cleanContent, message);
             const data = await functions.SpreadsheetGET(client);
            
             if (answer.intent.substring(0, 5) === "embed") {
