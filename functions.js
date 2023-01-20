@@ -48,7 +48,7 @@ module.exports = {
         }
     },
 
-    DialogflowQuery: async function (client, message) {
+    DialogflowQuery: async function (client, messageWithoutName, message) {
         const config = {
             credentials: {
                 private_key: process.env[
@@ -67,7 +67,7 @@ module.exports = {
             session: sessionPath,
             queryInput: {
                 text: {
-                    text: message.cleanContent,
+                    text: messageWithoutName,
                     languageCode: "en-US",
                 },
             },
