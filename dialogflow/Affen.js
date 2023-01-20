@@ -160,22 +160,8 @@ module.exports = {
           // MENTIONS ==========================================================
         else if (!message.author.bot) {
             if (message.channel.type != "dm") {
-                if (message.mentions.has(client.user.id) ||
-                message.cleanContent.startsWith(client.user.username + " ") ||
-                message.cleanContent.startsWith(client.user.username.toLowerCase() + " ")) {
-
-                messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-                console.log(messageWithoutName)
-
-                const answer = await functions.DialogflowQuery(client, messageWithoutName, message);
-                message.reply(answer.response);
-
-            }
-            else {
-                const answer = await functions.DialogflowQuery(client, message.cleanContent, message);
-                message.reply(answer.response);
-            }  
-            }
+                functions.Mention(client, message)   
+        }
         }
     }
 };
