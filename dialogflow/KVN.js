@@ -11,7 +11,7 @@ module.exports = {
                 message.cleanContent.startsWith(client.user.username + " ") ||
                 message.cleanContent.startsWith(client.user.username.toLowerCase() + " ")) {
 
-                cleanMessage = message.substr(message.indexOf(" ") + 1)
+                cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
                 console.log(cleanMessage)
 
                 const answer = await functions.DialogflowQuery(client, cleanMessage);
