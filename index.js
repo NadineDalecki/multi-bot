@@ -14,7 +14,7 @@ const functions = require("./functions.js")
 const giphy = require("giphy-api")(process.env.GIPHY)
 const schedule = require("node-schedule")
 
-const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
+const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
 
 BotTokens.forEach(runBot)
 
