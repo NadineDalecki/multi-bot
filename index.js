@@ -88,13 +88,6 @@ function runBot(token) {
         if (client.user.id === "1066447990354608319") {
             if (message.author.id === "931899028734627860" && message.cleanContent.includes("Mixed")) {
 
-                const scrimEmbed = new MessageEmbed()
-                    .setColor(0x5232a8)
-                    .setTitle('New Scrim!')
-                    .setURL('https://discord.gg/Z5cbMdvSVR')
-                    .setAuthor({ name: 'scrimbot', iconURL: 'https://cdn.discordapp.com/avatars/931899028734627860/13df3b658dfb1d58730887eb49a4bcec.webp?size=80', url: 'https://discord.gg/Z5cbMdvSVR' })
-                    .setDescription(message)
-
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
                     .channels.cache.get("1063239976474656898")
