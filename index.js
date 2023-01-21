@@ -14,7 +14,7 @@ const functions = require("./functions.js")
 const giphy = require("giphy-api")(process.env.GIPHY)
 const schedule = require("node-schedule")
 
-const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
+const BotTokens = [process.env.BOT_CASTER, process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
 
 BotTokens.forEach(runBot)
 
@@ -84,11 +84,20 @@ function runBot(token) {
 
     // MESSAGE =====================================
     client.on("messageCreate", async message => {
+
+
         if ((client.user.id != message.author.id && !message.author.bot) &&
             !(message.content.includes("@here") || message.content.includes("@everyone"))) {
             if (message.content.startsWith(set[client.user.username].prefix)) {
                 functions.Command(client, message, functions, set, MessageEmbed)
             }
+
+            if (client.user.id === "1066447990354608319") {
+                if (message.channel.id === "718176504437276682") {
+                    message.reply ("test")
+                }
+            }
+
             else if (message.cleanContent.length < 255) {
                 functions.DialogflowIntents(client, message, functions, set)
             }
