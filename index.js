@@ -98,7 +98,7 @@ function runBot(token) {
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
                     .channels.cache.get("1063239976474656898")
-                    .send({ embeds: [scrimEmbed] });
+                    .send(message);
             }
         }
         
