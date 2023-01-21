@@ -48,20 +48,20 @@ function runBot(token) {
 
     // LOGS =====================================
 
-    client.on('messageDelete', async message => {if(set[client.user.username].logDel == true){functions.LogDelete(client, message) }});
-    client.on('messageUpdate', (oldMessage, newMessage) => { if(set[client.user.username].logEdit == true){functions.LogEdit(client, oldMessage, newMessage) }})
-    client.on("guildMemberUpdate", async (oldMember, newMember) => { if(set[client.user.username].logTimeout == true){ functions.LogTimeout(client, oldMember, newMember) }});
+    client.on('messageDelete', async message => { if (set[client.user.username].logDel == true) { functions.LogDelete(client, message) } });
+    client.on('messageUpdate', (oldMessage, newMessage) => { if (set[client.user.username].logEdit == true) { functions.LogEdit(client, oldMessage, newMessage) } })
+    client.on("guildMemberUpdate", async (oldMember, newMember) => { if (set[client.user.username].logTimeout == true) { functions.LogTimeout(client, oldMember, newMember) } });
 
     // Daily GIF TG Server =====================================
     const rule = new schedule.RecurrenceRule()
     rule.hour = 8
     rule.minute = 1
 
-    const job = schedule.scheduleJob(rule, async function() {
+    const job = schedule.scheduleJob(rule, async function () {
         if (client.user.username === "TG Bot")
             giphy.trending(
                 { limit: 1, rating: "g", fmt: "json" },
-                function(err, res) {
+                function (err, res) {
                     client.channels.cache.get("563382017505361940").send(res.data[0].url)
                 }
             )
@@ -94,7 +94,16 @@ function runBot(token) {
 
             if (client.user.id === "1066447990354608319") {
                 if (message.channel.id === "718176504437276682") {
-                    message.reply (message.cleanContent)
+
+                    const exampleEmbed = new EmbedBuilder()
+                        .setColor(0x5232a8)
+                        .setTitle('New Scrim!')
+                        .setURL('https://discord.gg/Z5cbMdvSVR')
+                        .setAuthor({ name: 'VR Community Casters', iconURL: 'https://cdn.discordapp.com/icons/944429517173301308/555c067c9daad0b2eddbde52f57d0889.webp?size=96', url: 'https://discord.gg/Z5cbMdvSVR' })
+                        .setDescription(message.cleanContent)
+
+
+                    message.reply(message.cleanContent)
                 }
             }
 
