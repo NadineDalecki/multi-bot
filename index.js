@@ -94,7 +94,7 @@ function runBot(token) {
 
             if (client.user.id === "1066447990354608319") {
                 if (message.channel.id === "718176504437276682") {
-                    message.reply ("test")
+                    message.reply (message.cleanContent)
                 }
             }
 
