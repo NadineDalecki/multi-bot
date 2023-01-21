@@ -85,31 +85,29 @@ function runBot(token) {
     // MESSAGE =====================================
     client.on("messageCreate", async message => {
 
+        if (client.user.id === "1066447990354608319") {
+            if (message.author.id === "931899028734627860") {
 
+                const scrimEmbed = new MessageEmbed()
+                    .setColor(0x5232a8)
+                    .setTitle('New Scrim!')
+                    .setURL('https://discord.gg/Z5cbMdvSVR')
+                    .setAuthor({ name: 'scrimbot', iconURL: 'https://cdn.discordapp.com/avatars/931899028734627860/13df3b658dfb1d58730887eb49a4bcec.webp?size=80', url: 'https://discord.gg/Z5cbMdvSVR' })
+                    .setDescription(message.cleanContent)
+
+                    client.guilds.cache
+                    .get(set[client.user.username].guildId)
+                    .channels.cache.get("1063239976474656898")
+                    .send({ embeds: [scrimEmbed] });
+            }
+        }
+        
         if ((client.user.id != message.author.id && !message.author.bot) &&
             !(message.content.includes("@here") || message.content.includes("@everyone"))) {
             if (message.content.startsWith(set[client.user.username].prefix)) {
                 functions.Command(client, message, functions, set, MessageEmbed)
             }
 
-            if (client.user.id === "1066447990354608319") {
-
-
-                if (message.author.id === "931899028734627860") {
-
-                    const scrimEmbed = new MessageEmbed()
-                        .setColor(0x5232a8)
-                        .setTitle('New Scrim!')
-                        .setURL('https://discord.gg/Z5cbMdvSVR')
-                        .setAuthor({ name: 'scrimbot', iconURL: 'https://cdn.discordapp.com/avatars/931899028734627860/13df3b658dfb1d58730887eb49a4bcec.webp?size=80', url: 'https://discord.gg/Z5cbMdvSVR' })
-                        .setDescription(message.cleanContent)
-
-                        client.guilds.cache
-                        .get(set[client.user.username].guildId)
-                        .channels.cache.get("1063239976474656898")
-                        .send({ embeds: [scrimEmbed] });
-                }
-            }
             else if (message.cleanContent.length < 255) {
                 functions.DialogflowIntents(client, message, functions, set)
             }
