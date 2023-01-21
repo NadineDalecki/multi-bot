@@ -96,7 +96,7 @@ function runBot(token) {
             if (client.user.id === "1066447990354608319") {
                 if (message.channel.id === "718176504437276682") {
 
-                    const scrimEmbed = new EmbedBuilder()
+                    const scrimEmbed = new MessageEmbed()
                         .setColor(0x5232a8)
                         .setTitle('New Scrim!')
                         .setURL('https://discord.gg/Z5cbMdvSVR')
