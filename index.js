@@ -93,7 +93,7 @@ function runBot(token) {
             }
 
             if (client.user.id === "1066447990354608319") {
-                if (message.channel.id === "718176504437276682") {
+                if (message.channel.id === "1063239976474656898") {
 
                     const scrimEmbed = new MessageEmbed()
                         .setColor(0x5232a8)
