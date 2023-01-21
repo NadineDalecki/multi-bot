@@ -89,6 +89,11 @@ function runBot(token) {
             if (message.author.id === "931899028734627860" && message.cleanContent.includes("Mixed")) {
 
                 let user = message.mentions.users.first();
+
+                console.log(user)
+                console.log(user.id)
+
+            
                 client.guilds.cache
                     .get(set[client.user.username].guildId)
                     .channels.cache.get("1063239976474656898")
@@ -98,7 +103,7 @@ function runBot(token) {
                     .setColor(0x5232a8)
                     .setURL('https://discord.gg/Z5cbMdvSVR')
                     .setAuthor({ name: 'creator of the scrim', iconURL: 'https://cdn.discordapp.com/avatars/931899028734627860/13df3b658dfb1d58730887eb49a4bcec.webp?size=80', url: 'https://discord.gg/Z5cbMdvSVR' })
-                    .setDescription( message)
+                    .setDescription(message.cleanContent)
 
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
