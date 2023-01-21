@@ -102,7 +102,7 @@ function runBot(token) {
                 const scrimEmbed = new MessageEmbed()
                     .setColor(0x5232a8)
                     .setURL('https://discord.gg/Z5cbMdvSVR')
-                    .setAuthor({ name: 'creator of the scrim', iconURL: 'https://cdn.discordapp.com/avatars/931899028734627860/13df3b658dfb1d58730887eb49a4bcec.webp?size=80', url: 'https://discord.gg/Z5cbMdvSVR' })
+                    .setAuthor({ name: user.username, iconURL: user.defaultAvatarURL, url: user.defaultAvatarURL })
                     .setDescription(message.cleanContent)
 
                     client.guilds.cache
