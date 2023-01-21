@@ -93,18 +93,23 @@ function runBot(token) {
             }
 
             if (client.user.id === "1066447990354608319") {
-                if (message.channel.id === "1063239976474656898") {
+
+
+                if (client.user.id === "931899028734627860") {
 
                     const scrimEmbed = new MessageEmbed()
                         .setColor(0x5232a8)
                         .setTitle('New Scrim!')
                         .setURL('https://discord.gg/Z5cbMdvSVR')
-                        .setAuthor({ name: 'VR Community Casters', iconURL: 'https://cdn.discordapp.com/icons/944429517173301308/555c067c9daad0b2eddbde52f57d0889.webp?size=96', url: 'https://discord.gg/Z5cbMdvSVR' })
+                        .setAuthor({ name: 'scrimbot', iconURL: 'https://cdn.discordapp.com/avatars/931899028734627860/13df3b658dfb1d58730887eb49a4bcec.webp?size=80', url: 'https://discord.gg/Z5cbMdvSVR' })
                         .setDescription(message.cleanContent)
-                        message.channel.send({ embeds: [scrimEmbed] });
+
+                        client.guilds.cache
+                        .get(set[client.user.username].guildId)
+                        .channels.cache.get("1063239976474656898")
+                        .send({ embeds: [scrimEmbed] });
                 }
             }
-
             else if (message.cleanContent.length < 255) {
                 functions.DialogflowIntents(client, message, functions, set)
             }
