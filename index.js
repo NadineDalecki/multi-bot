@@ -95,7 +95,7 @@ function runBot(token) {
             if (client.user.id === "1066447990354608319") {
 
 
-                if (client.user.id === "931899028734627860") {
+                if (message.author.id === "931899028734627860") {
 
                     const scrimEmbed = new MessageEmbed()
                         .setColor(0x5232a8)
