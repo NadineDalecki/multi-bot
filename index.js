@@ -92,12 +92,12 @@ function runBot(token) {
                 let mes = message.cleanContent.split(" ").slice(0, -3).join(' ')
 
                 console.log(user)
+                console.log(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}}`)
 
                 const scrimEmbed = new MessageEmbed()
                     .setColor(0x5232a8)
                     .setURL('https://discord.gg/Z5cbMdvSVR')
-                    .setAuthor({ name: user.tag, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.avatar
-                }`, url: `https://discord.com/channels/@me/${user.id}` })
+                    .setAuthor({ name: user.tag, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`, url: `https://discord.com/channels/@me/${user.id}` })
                     .setDescription(mes)
 
                     client.guilds.cache
