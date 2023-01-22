@@ -95,7 +95,7 @@ function runBot(token) {
                 console.log(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}}`)
 
                 const scrimEmbed = new MessageEmbed()
-                    .setColor(0x5232a8)
+                    .setColor(0xffffff)
                     .setURL('https://discord.gg/Z5cbMdvSVR')
                     .setAuthor({ name: user.tag, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`, url: `https://discord.com/channels/@me/${user.id}` })
                     .setDescription(mes)
