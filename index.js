@@ -103,6 +103,11 @@ function runBot(token) {
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
                     .channels.cache.get("1063239976474656898")
+                    .send("<@&1066622722622357654>");
+
+                    client.guilds.cache
+                    .get(set[client.user.username].guildId)
+                    .channels.cache.get("1063239976474656898")
                     .send({ embeds: [scrimEmbed] });
             }
         }
