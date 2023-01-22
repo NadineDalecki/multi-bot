@@ -97,7 +97,7 @@ function runBot(token) {
                 const scrimEmbed = new MessageEmbed()
                     .setColor(0xffffff)
                     .setURL('https://discord.gg/Z5cbMdvSVR')
-                    .setAuthor({ name: user.tag, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`, url: `https://discord.com/channels/@me/${user.id}` })
+                    .setAuthor({ name: user.tag, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`, url: `https://discordapp.com/channels/@me/${user.id}` })
                     .setDescription(mes)
 
                     client.guilds.cache
