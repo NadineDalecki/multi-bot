@@ -89,21 +89,16 @@ function runBot(token) {
             if (message.author.id === "931899028734627860" && message.cleanContent.includes("Mixed")) {
 
                 let user = message.mentions.users.first();
+                let mes = message.cleanContent.split(" ").slice(0, -3).join(' ')
 
                 console.log(user)
-                console.log(user.id)
-
-            
-                client.guilds.cache
-                    .get(set[client.user.username].guildId)
-                    .channels.cache.get("1063239976474656898")
-                    .send(user);
 
                 const scrimEmbed = new MessageEmbed()
                     .setColor(0x5232a8)
                     .setURL('https://discord.gg/Z5cbMdvSVR')
-                    .setAuthor({ name: user.username, iconURL: user.defaultAvatarURL, url: user.defaultAvatarURL })
-                    .setDescription(message.cleanContent)
+                    .setAuthor({ name: user.tag, iconURL: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.avatar
+                }`, url: `https://discord.com/channels/@me/${user.id}` })
+                    .setDescription(mes)
 
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
