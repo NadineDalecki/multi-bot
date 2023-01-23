@@ -93,7 +93,7 @@ function runBot(token) {
 
                 const scrimEmbed = new MessageEmbed()
                     .setColor(0xffffff)
-                    .setDescription(`<@${user.id}> (<@${user.tag}>) | ${mes} | [link](${message.url})`)
+                    .setDescription(`<@${user.id}> (${user.tag}) | ${mes} | [link](${message.url})`)
 
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
