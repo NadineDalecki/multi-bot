@@ -91,12 +91,9 @@ function runBot(token) {
                 let user = message.mentions.users.first();
                 let mes = message.cleanContent.split(" ").slice(0, -3).join(' ')
 
-                console.log(user)
-                console.log(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}}`)
-
                 const scrimEmbed = new MessageEmbed()
                     .setColor(0xffffff)
-                    .setDescription(`<@${user.id}> | ${mes} | [link](${message.url})`)
+                    .setDescription(`<@${user.id}> (<@${user.tag}>) | ${mes} | [link](${message.url})`)
 
                     client.guilds.cache
                     .get(set[client.user.username].guildId)
