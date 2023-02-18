@@ -51,6 +51,26 @@ function runBot(token) {
     client.on('messageDelete', async message => { if (set[client.user.username].logDel == true) { functions.LogDelete(client, message) } });
     client.on('messageUpdate', (oldMessage, newMessage) => { if (set[client.user.username].logEdit == true) { functions.LogEdit(client, oldMessage, newMessage) } })
     client.on("guildMemberUpdate", async (oldMember, newMember) => { if (set[client.user.username].logTimeout == true) { functions.LogTimeout(client, oldMember, newMember) } });
+    client.on('guildMemberAdd', async (member) => {
+
+        if (client.user.username === "Affen") {
+
+        let invite = await member.guild.fetchInvites();
+        invite = invite.find(i => i.inviter.id === member.user.id);
+        if (invite) {
+            let inviter = invite.inviter;
+            client.guilds.cache
+                .get(set[client.user.username].guildId)
+                .channels.cache.get(set[client.user.username].logChannel)
+                .send(`${member.user.tag} was invited by ${inviter.tag}`);
+        } else {
+            client.guilds.cache
+                .get(set[client.user.username].guildId)
+                .channels.cache.get(set[client.user.username].logChannel)
+                .send(`${member.user.tag} was not invited by anyone`);
+        }
+    }
+    });
 
     // Daily GIF TG Server =====================================
     const rule = new schedule.RecurrenceRule()
