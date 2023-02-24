@@ -14,7 +14,7 @@ module.exports = {
             const remainingHours = Math.floor(remainingTime / (60 * 60 * 1000));
             const remainingMinutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
 
-            message.reply(`you can only use this command once per day. Please try again in ${remainingHours} hours and ${remainingMinutes} minutes.`);
+            message.reply(`Nah, you had enough food for today 😤`);
             return;
             }
 
