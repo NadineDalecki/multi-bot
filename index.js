@@ -56,8 +56,6 @@ for (const token of BotTokens) {
     })
     client.login(token)
 
-    
-
     // LOGS =====================================
 
     client.on('messageDelete', async message => { if (set[client.user.username].logDel == true) { functions.LogDelete(client, message)}});

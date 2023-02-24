@@ -1,9 +1,25 @@
 const axios = require("axios");
+const fs = require("fs");
 
 module.exports = {
     name: "food",
     async execute(client, message, functions, args, set, MessageEmbed) {
         if (client.user.username === "Affen") {
+
+            const lastUsage = getLastUsage();
+
+            // Check if the command was used within the last 24 hours
+            if (lastUsage && Date.now() - lastUsage < 24 * 60 * 60 * 1000) {
+            const remainingTime = new Date(lastUsage + 24 * 60 * 60 * 1000 - Date.now());
+            const remainingHours = Math.floor(remainingTime / (60 * 60 * 1000));
+            const remainingMinutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+
+            message.reply(`you can only use this command once per day. Please try again in ${remainingHours} hours and ${remainingMinutes} minutes.`);
+            return;
+            }
+
+            // Update the last usage timestamp
+            updateLastUsage();
 
             const foodItem = await axios.request({
                 url: "https://www.reddit.com/r/foodporn.json",
@@ -29,6 +45,20 @@ module.exports = {
         } else {
             message.channel.send({ embeds: [embed] })
         };
+
+        function getLastUsage() {
+            try {
+              const lastUsage = fs.readFileSync("./lastUsage.txt", "utf8");
+              return parseInt(lastUsage);
+            } catch (err) {
+              return null;
+            }
+          }
+          
+          function updateLastUsage() {
+            const timestamp = Date.now().toString();
+            fs.writeFileSync("./lastUsage.txt", timestamp, "utf8");
+          }
 
     }
 }

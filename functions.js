@@ -209,8 +209,6 @@ module.exports = {
 
             const log = fetchedLogs.entries.first();
             if (!log) return;
-            console.log(log.target.tag)
-            console.log(log.executor.tag)
 
             var timeDifference = newMember.communicationDisabledUntilTimestamp - new Date().getTime() 
             var differenceDate = new Date(timeDifference);
@@ -237,7 +235,6 @@ module.exports = {
         }
     }
     catch(e){
-
         console.log("I could not handle this timeout!")
     }
     },
