@@ -1,27 +1,10 @@
 const axios = require("axios");
 const fs = require("fs");
-const cooldowns = new Map();
 
 module.exports = {
     name: "food",
     async execute(client, message, functions, args, set, MessageEmbed) {
         if (client.user.username === "Affen") {
-            return;
-        }
-
-          // Get the current time in milliseconds
-          const now = Date.now();
-
-          // Check if the user has already used the command within the past 24 hours
-          const cooldownDuration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-          const cooldownKey = `${message.author.id}-${this.name}`;
-          const cooldown = cooldowns.get(cooldownKey);
-          if (cooldown && now < cooldown + cooldownDuration) {
-              const remainingTime = cooldown + cooldownDuration - now;
-              const remainingHours = Math.ceil(remainingTime / (60 * 60 * 1000));
-              message.channel.send(`Nah, you had enough food for now 😤!`);
-              return;
-          }
 
             const foodItem = await axios.request({
                 url: "https://www.reddit.com/r/foodporn.json",
@@ -44,7 +27,8 @@ module.exports = {
             } else {
                 message.channel.send("Wrong channel you noob. Use #incredible-edible.")
             };
-
-            cooldowns.set(cooldownKey, now);
-        } 
+        } else {
+            message.channel.send({ embeds: [embed] })
+        };
+    }
 }
