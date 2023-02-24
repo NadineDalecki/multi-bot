@@ -16,16 +16,24 @@ const schedule = require("node-schedule")
 
 const BotTokens = [process.env.BOT_CASTER, process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
 
-BotTokens.forEach(runBot)
-
-function runBot(token) {
+for (const token of BotTokens) {
+    runBot(token);
+  }
+  
+  function runBot(token) {
     const client = new Client({
-        partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"],
-        intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
-        clientOptions: {
-            fetchAllMembers: true
-        }
-    })
+      partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'USER'],
+      intents: [
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.DIRECT_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+      ],
+      clientOptions: {
+        fetchAllMembers: true,
+      },
+    });
 
     client.on("error", error => console.log(error))
     process.on("error", error => console.log(error))
@@ -48,29 +56,10 @@ function runBot(token) {
 
     // LOGS =====================================
 
-    client.on('messageDelete', async message => { if (set[client.user.username].logDel == true) { functions.LogDelete(client, message) } });
-    client.on('messageUpdate', (oldMessage, newMessage) => { if (set[client.user.username].logEdit == true) { functions.LogEdit(client, oldMessage, newMessage) } })
-    client.on("guildMemberUpdate", async (oldMember, newMember) => { if (set[client.user.username].logTimeout == true) { functions.LogTimeout(client, oldMember, newMember) } });
-    client.on('guildMemberAdd', async (member) => {
-
-        if (client.user.username === "Affen") {
-
-        let invite = await member.guild.fetchInvites();
-        invite = invite.find(i => i.inviter.id === member.user.id);
-        if (invite) {
-            let inviter = invite.inviter;
-            client.guilds.cache
-                .get(set[client.user.username].guildId)
-                .channels.cache.get(set[client.user.username].logChannel)
-                .send(`${member.user.tag} was invited by ${inviter.tag}`);
-        } else {
-            client.guilds.cache
-                .get(set[client.user.username].guildId)
-                .channels.cache.get(set[client.user.username].logChannel)
-                .send(`${member.user.tag} was not invited by anyone`);
-        }
-    }
-    });
+    client.on('messageDelete', async message => { if (set[client.user.username].logDel == true) { functions.LogDelete(client, message)}});
+    client.on('messageUpdate', (oldMessage, newMessage) => { if (set[client.user.username].logEdit == true) { functions.LogEdit(client, oldMessage, newMessage)}})
+    client.on("guildMemberUpdate", async (oldMember, newMember) => { if (set[client.user.username].logTimeout == true) { functions.LogTimeout(client, oldMember, newMember)}});
+    client.on('guildMemberAdd', async (member) => {if (set[client.user.username].logInvite == true) { functions.LogInvite(member)}});
 
     // Daily GIF TG Server =====================================
     const rule = new schedule.RecurrenceRule()

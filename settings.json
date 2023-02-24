@@ -13,6 +13,7 @@
         "logDel": false,
         "logEdit": false,
         "logTimeout": true,
+        "logInvite": true,
         "status": "dnd",
         "activity": {
             "name": "shit talking",
