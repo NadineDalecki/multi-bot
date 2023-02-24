@@ -35,10 +35,10 @@ for (const token of BotTokens) {
       },
     });
 
-    client.on("error", error => console.log(error))
-    process.on("error", error => console.log(error))
-    process.on("uncaughtException", error => console.log(error))
-    process.on("unhandledRejection", error => console.log(error))
+  client.on('error', console.log);
+  process.on('error', console.log);
+  process.on('uncaughtException', console.log);
+  process.on('unhandledRejection', console.log);
 
     // READY UP =====================================
     client.once("ready", () => {
