@@ -6,9 +6,9 @@ module.exports = {
     name: "food",
     async execute(client, message, functions, args, set, MessageEmbed) {
         if (client.user.username === "Affen") {
-            return;
-        }
-
+            
+        
+            console.log("command executed")
           // Get the current time in milliseconds
           const now = Date.now();
 
@@ -21,6 +21,8 @@ module.exports = {
               const remainingHours = Math.ceil(remainingTime / (60 * 60 * 1000));
               message.channel.send(`Nah, you had enough food for now 😤!`);
               return;
+              console.log(remainingHours)
+              console.log(remainingTime)
           }
 
             const foodItem = await axios.request({
@@ -47,4 +49,4 @@ module.exports = {
 
             cooldowns.set(cooldownKey, now);
         } 
-}
+    }}
