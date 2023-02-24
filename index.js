@@ -18,48 +18,51 @@ const BotTokens = [process.env.BOT_CASTER, process.env.BOT_MEL, process.env.BOT_
 
 for (const token of BotTokens) {
     runBot(token);
-  }
-  
-  function runBot(token) {
+}
+
+function runBot(token) {
     const client = new Client({
-      partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'USER'],
-      intents: [
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.DIRECT_MESSAGES,
-        Intents.FLAGS.GUILD_MEMBERS,
-        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-      ],
-      clientOptions: {
-        fetchAllMembers: true,
-      },
+        partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'USER'],
+        intents: [
+            Intents.FLAGS.GUILDS,
+            Intents.FLAGS.GUILD_MESSAGES,
+            Intents.FLAGS.DIRECT_MESSAGES,
+            Intents.FLAGS.GUILD_MEMBERS,
+            Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+        ],
+        clientOptions: {
+            fetchAllMembers: true,
+        },
     });
 
-  client.on('error', console.log);
-  process.on('error', console.log);
-  process.on('uncaughtException', console.log);
-  process.on('unhandledRejection', console.log);
+    client.on('error', console.log);
+    process.on('error', console.log);
+    process.on('uncaughtException', console.log);
+    process.on('unhandledRejection', console.log);
 
     // READY UP =====================================
-    client.once("ready", () => {
-        client.user.setPresence({
-            status: set[client.user.username].status,
-            activities: [{
-                name: set[client.user.username].activity.name,
-                url: set[client.user.username].activity.url,
-                type: set[client.user.username].activity.type
-            }]
-        })
-        console.log(client.user.username + " Ready!")
-    })
+
+    const { username } = client.user;
+    const {
+        status,
+        activity: { name, url, type },
+    } = set[username];
+
+    client.once('ready', () => {
+        client.user.setPresence({ status, activities: [{ name, url, type }] });
+        console.log(`${username} Ready!`);
+    });
+
     client.login(token)
+
+
 
     // LOGS =====================================
 
-    client.on('messageDelete', async message => { if (set[client.user.username].logDel == true) { functions.LogDelete(client, message)}});
-    client.on('messageUpdate', (oldMessage, newMessage) => { if (set[client.user.username].logEdit == true) { functions.LogEdit(client, oldMessage, newMessage)}})
-    client.on("guildMemberUpdate", async (oldMember, newMember) => { if (set[client.user.username].logTimeout == true) { functions.LogTimeout(client, oldMember, newMember)}});
-    client.on('guildMemberAdd', async (member) => {if (set[client.user.username].logInvite == true) { functions.LogInvite(member)}});
+    client.on('messageDelete', async (message) => {if (set[username].logDel) {functions.LogDelete(client, message);}});
+    client.on('messageUpdate', (oldMessage, newMessage) => { if (set[username].logEdit == true) { functions.LogEdit(client, oldMessage, newMessage) } })
+    client.on("guildMemberUpdate", async (oldMember, newMember) => { if (set[username].logTimeout == true) { functions.LogTimeout(client, oldMember, newMember) } });
+    client.on('guildMemberAdd', async (member) => { if (set[username].logInvite == true) { functions.LogInvite(member) } });
 
     // Daily GIF TG Server =====================================
     const rule = new schedule.RecurrenceRule()
@@ -104,18 +107,18 @@ for (const token of BotTokens) {
                     .setColor(0xffffff)
                     .setDescription(`<@${user.id}> (${user.tag}) | ${mes} | [link](${message.url})`)
 
-                    client.guilds.cache
+                client.guilds.cache
                     .get(set[client.user.username].guildId)
                     .channels.cache.get("1063239976474656898")
                     .send("<@&1066622549498269766>");
 
-                    client.guilds.cache
+                client.guilds.cache
                     .get(set[client.user.username].guildId)
                     .channels.cache.get("1063239976474656898")
                     .send({ embeds: [scrimEmbed] });
             }
         }
-        
+
         if ((client.user.id != message.author.id && !message.author.bot) &&
             !(message.content.includes("@here") || message.content.includes("@everyone"))) {
             if (message.content.startsWith(set[client.user.username].prefix)) {
