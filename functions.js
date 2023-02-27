@@ -172,7 +172,6 @@ module.exports = {
         }
     }
     catch(e){
-
         console.log("I could not handle this deleted message!")
     }
     },

@@ -8,7 +8,7 @@ module.exports = {
         if (client.user.username === "Affen") {
 
             const now = Date.now();
-            const cooldownDuration = 24 * 60 * 60 * 1000;
+            const cooldownDuration = 12 * 60 * 60 * 1000;
             const cooldownKey = `${message.author.id}-${this.name}`;
             const cooldown = cooldowns.get(cooldownKey);
             if (cooldown && now < cooldown + cooldownDuration) {
