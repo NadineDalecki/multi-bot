@@ -34,6 +34,8 @@ module.exports = {
                 .setImage(image)
                 .setFooter({ text: "From r/FoodPorn", iconURL: "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png" })
             
+                message.channel.send({ embeds: [embed] })
+
                 cooldowns.set(cooldownKey, now);
             } else {
                 message.channel.send("Wrong channel you noob. Use #incredible-edible.")
