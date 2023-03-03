@@ -1,12 +1,13 @@
 const axios = require("axios");
 const fs = require("fs");
-const cooldowns = new Map();
 
 module.exports = {
     name: "food",
     async execute(client, message, functions, args, set, MessageEmbed) {
         if (client.user.username === "Affen") {
             if (message.channel.id === "748184563800473673" || message.channel.type == "DM" || message.channel.id === "718176504437276682") {
+            
+            const cooldowns = new Map();
             const now = Date.now();
             const cooldownDuration = 12 * 60 * 60 * 1000;
             const cooldownKey = `${message.author.id}-${this.name}`;
