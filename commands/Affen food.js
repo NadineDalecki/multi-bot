@@ -33,10 +33,12 @@ module.exports = {
                 .setTitle(title)
                 .setImage(image)
                 .setFooter({ text: "From r/FoodPorn", iconURL: "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png" })
+            
+                cooldowns.set(cooldownKey, now);
             } else {
                 message.channel.send("Wrong channel you noob. Use #incredible-edible.")
             };
-            cooldowns.set(cooldownKey, now);
+            
         }
     }
 }
