@@ -6,7 +6,7 @@ module.exports = {
     name: "food",
     async execute(client, message, functions, args, set, MessageEmbed) {
         if (client.user.username === "Affen") {
-
+            if (message.channel.id === "748184563800473673" || message.channel.type == "DM" || message.channel.id === "718176504437276682") {
             const now = Date.now();
             const cooldownDuration = 12 * 60 * 60 * 1000;
             const cooldownKey = `${message.author.id}-${this.name}`;
@@ -32,9 +32,6 @@ module.exports = {
                 .setTitle(title)
                 .setImage(image)
                 .setFooter({ text: "From r/FoodPorn", iconURL: "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Reddit-512.png" })
-
-            if (message.channel.id === "748184563800473673" || message.channel.type == "DM" || message.channel.id === "718176504437276682") {
-                message.channel.send({ embeds: [embed] })
             } else {
                 message.channel.send("Wrong channel you noob. Use #incredible-edible.")
             };
