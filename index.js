@@ -14,7 +14,7 @@ const functions = require("./functions.js")
 const giphy = require("giphy-api")(process.env.GIPHY)
 const schedule = require("node-schedule")
 
-const BotTokens = [process.env.BOT_CASTER, process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
+const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN]
 
 for (const token of BotTokens) {
 	runBot(token)
@@ -100,23 +100,7 @@ function runBot(token) {
 
 	// MESSAGE =====================================
 	client.on("messageCreate", async message => {
-		if (client.user.id === "1066447990354608319") {
-			if (message.author.id === "931899028734627860" && message.cleanContent.includes("Mixed")) {
-				let user = message.mentions.users.first()
-				let mes = message.cleanContent.split(" ").slice(0, -3).join(" ")
-
-				const scrimEmbed = new MessageEmbed().setColor(0xffffff).setDescription(`<@${user.id}> (${user.tag}) | ${mes} | [link](${message.url})`)
-
-				client.guilds.cache.get(set[client.user.username].guildId).channels.cache.get("1063239976474656898").send("<@&1066622549498269766>")
-
-				client.guilds.cache
-					.get(set[client.user.username].guildId)
-					.channels.cache.get("1063239976474656898")
-					.send({ embeds: [scrimEmbed] })
-			}
-		}
-
-		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
+    if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
 			} else if (message.cleanContent.length < 255) {
