@@ -237,22 +237,6 @@ module.exports = {
         console.log("I could not handle this timeout!")
     }
     },
-    LogInvite: async function (member) {
-        let invite = await member.guild.fetchInvites();
-        invite = invite.find(i => i.inviter.id === member.user.id);
-        if (invite) {
-            let inviter = invite.inviter;
-            client.guilds.cache
-                .get(set[client.user.username].guildId)
-                .channels.cache.get(set[client.user.username].logChannel)
-                .send(`${member.user.tag} was invited by ${inviter.tag}`);
-        } else {
-            client.guilds.cache
-                .get(set[client.user.username].guildId)
-                .channels.cache.get(set[client.user.username].logChannel)
-                .send(`${member.user.tag} was not invited by anyone`);
-        }
-    },
     Mention: function (client, message) {
         try {
             if (message.content.toLowerCase().includes("nada") ||

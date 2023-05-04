@@ -53,7 +53,6 @@ function runBot(token) {
 	client.login(token)
 
 	// LOGS =====================================
-
 	client.on("messageDelete", async message => {
 		if (set[client.user.username].logDel == true) {
 			functions.LogDelete(client, message)
@@ -85,18 +84,6 @@ function runBot(token) {
 			giphy.trending({ limit: 1, rating: "g", fmt: "json" }, function (err, res) {
 				client.channels.cache.get("563382017505361940").send(res.data[0].url)
 			})
-	})
-
-	// REACTIONS =====================================
-	client.on("messageReactionAdd", async (reaction, user) => {
-		if (ReactionsAdd[client.user.username]) {
-			ReactionsAdd[client.user.username](reaction, client, user, set, MessageEmbed)
-		}
-	})
-	client.on("messageReactionRemove", async (reaction, user) => {
-		if (ReactionsRemove[client.user.username]) {
-			ReactionsRemove[client.user.username](reaction, client, user, set, MessageEmbed)
-		}
 	})
 
 	// MESSAGE =====================================

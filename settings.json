@@ -20,8 +20,6 @@
             "type": "COMPETING",
             "url": "https://discord.com"
         },
-        "JoinDM": true,
-        "JoinDMText": "**Welcome to Echo Arena EU Teams! This is a *closed-off private space from NA players*, so don’t mention this server or talk about its contents. READ THE WELCOME CHANNEL! **Be respectful**, but as this is a competitive server some drama/salt/banter is expected between teams and players.\n\n**MIXED SCRIMS**\n\nMixed scrims are fun games with random players, kind of like public matches but with the same group playing each other in a private match. A mixed scrim group will keep playing for as long as they feel like it (often 1-2 hours), with players dropping out and new players joining in.\n\n**Don’t join a mixed scrim unless you can play for at least 30 minutes, don’t ask for a mixed scrim unless you can play for about an hour. For more info about scrims and how we organize them check #scrim-info",
         "roles": {
             "lft": "549925842646597651",
             "Scrimmer": "509787093208399872",
@@ -35,7 +33,6 @@
             "Pancake-Strategy" :"1099928664130469960",
             "Pancake-FPS" :"1099923815787659324",
             "Pancake-Sports" :"1099924200543768657"
-
         }
     },
     "Avrel": {
