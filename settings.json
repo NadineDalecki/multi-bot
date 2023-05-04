@@ -40,7 +40,7 @@
     },
     "Avrel": {
         "spreadsheetID": "1LJ1feFfh69kEIM_oSfcSDvB-wYfrOzOj1Bdz6IIvhAI",
-        "guildId": "424911215714631690",
+        "guildId": "424911215714631690", //VREL
         "prefix": "?",
         "adminRoles": [
             
@@ -54,21 +54,6 @@
             "name": "the Game 💯",
             "type": "PLAYING",
             "url": "https://discord.com"
-        }
-    },
-    "EU Caster BB8": {
-        "guildId": "944429517173301308",
-        "prefix": "?",
-        "adminRoles": [
-        ],
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
-        "status": "online",
-        "activity": {
-            "name": "the Casters 👀",
-            "type": "WATCHING",
-            "url": "https://www.twitch.tv/"
         }
     },
      "Ewan": {
