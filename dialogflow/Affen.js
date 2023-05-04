@@ -91,10 +91,6 @@ module.exports = {
                     .get(set[client.user.username].guildId)
                     .members.fetch(message.author.id).then(
                         (member) => { member.roles.add(set["Affen"].roles[answer.intent]) });
-                if (answer.intent == "lft") {
-                    message.reply("Yeah no, too lazy to do that anymore. Go to the <#553895148552192000> channel and check the LFT message there!")
-                }
-
                 message.reply(answer.response);
             } else if (answer.intent.substring(0, 6) === "remove") {
                 const roleString = answer.intent.substring(7);
