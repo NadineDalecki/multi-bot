@@ -7,8 +7,6 @@ app.get("/", (request, response) => {
 app.listen()
 
 const { Client, Intents, MessageEmbed } = require("discord.js")
-const ReactionsAdd = require("./reactionsAdd.js")
-const ReactionsRemove = require("./reactionsRemove.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
 const giphy = require("giphy-api")(process.env.GIPHY)
@@ -48,7 +46,7 @@ function runBot(token) {
 			]
 		})
 		const serverList = client.guilds.cache.map(g => g.name).join(' | ')
-		console.log(`${client.user.username} | ${serverList} | Ready`)
+		console.log(`${client.user.username} | ${serverList}`)
 	})
 	client.login(token)
 
