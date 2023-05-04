@@ -47,7 +47,7 @@ function runBot(token) {
 				}
 			]
 		})
-		const serverList = client.guilds.cache.map(g => g.name).join('\n')
+		const serverList = client.guilds.cache.map(g => g.name).join(' | ')
 		console.log(`${client.user.username} | Ready`)
 		console.log(serverList)
 	})
