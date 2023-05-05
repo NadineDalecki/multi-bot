@@ -49,8 +49,11 @@ function runBot(token) {
 
 	// MESSAGE =====================================
 
-	const { OpenAI } = require("openai-api")
-	const openai = new OpenAI(process.env.OPENAI_API_KEY)
+	const { Configuration, OpenAIApi } = require("openai");
+	const configuration = new Configuration({
+		apiKey: process.env.OPENAI_API_KEY,
+	  });
+
 	
 
 	client.on("messageCreate", async message => {
@@ -61,12 +64,12 @@ function runBot(token) {
 				//Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
-					const result = await openai.complete({
-						model: "gpt-3.5-turbo",
+					const completion = await openai.createCompletion({
+						model: "text-davinci-003",
 						messages: message.cleanContent
 					})
 
-					message.reply(result.choices[0].message.content)
+					message.reply(completion.data.choices[0].text)
 				}
 			} else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
