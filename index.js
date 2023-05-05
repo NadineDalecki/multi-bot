@@ -62,7 +62,6 @@ function runBot(token) {
 			} else if (client.user.id === "717432759538417747") {
 				//Mo
 				if (message.mentions.has("717432759538417747")) {
-					message.channel.send("test")
 					const completion = await openai.createCompletion(
 						{
 							model: "text-davinci-003",
@@ -75,8 +74,7 @@ function runBot(token) {
 							}
 						}
 					)
-					console.log(completion.data.choices[0])
-					message.reply(completion.data.choices[0].text)
+					message.channel.send(completion.data.choices[0].text)
 				}
 			} else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
