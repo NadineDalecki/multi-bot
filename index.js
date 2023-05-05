@@ -52,7 +52,14 @@ function runBot(token) {
     if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
-			} else if (message.cleanContent.length < 255) {
+			} 
+			else if (client.user.id === "717432759538417747") { //Mo
+				if (message.mentions.has("717432759538417747")) {
+					message.channel.send("test")
+				}
+			}
+			
+			else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
 			}
 		}
