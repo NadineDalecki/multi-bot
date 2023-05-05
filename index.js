@@ -9,13 +9,8 @@ app.listen()
 const { Client, Intents, MessageEmbed } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
-const { OpenAI } = require('openai');
-const configuration = new Configuration({
-    organization: "org-J4xSg1ygSBeeboQfe6NLyza3",
-    apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(process.env.OPENAI_API_KEY);
-
+const { OpenAI } = require("openai")
+const openai = new OpenAIApi(process.env.OPENAI_API_KEY)
 
 const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN, process.env.BOT_MO]
 
@@ -49,30 +44,28 @@ function runBot(token) {
 				}
 			]
 		})
-		const serverList = client.guilds.cache.map(g => g.name).join(' | ')
+		const serverList = client.guilds.cache.map(g => g.name).join(" | ")
 		console.log(`${client.user.username} | ${serverList}`)
 	})
 	client.login(token)
 
 	// MESSAGE =====================================
 	client.on("messageCreate", async message => {
-    if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
+		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
-			} 
-			else if (client.user.id === "717432759538417747") { //Mo
+			} else if (client.user.id === "717432759538417747") {
+				//Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
 					const result = await openai.createChatCompletion({
-						model: 'gpt-3.5-turbo',
-						messages: message.cleanContent,
-					  });
-				
-					  message.reply(result.choices[0].message.content);
+						model: "gpt-3.5-turbo",
+						messages: message.cleanContent
+					})
+
+					message.reply(result.choices[0].message.content)
 				}
-			}
-			
-			else if (message.cleanContent.length < 255) {
+			} else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
 			}
 		}
