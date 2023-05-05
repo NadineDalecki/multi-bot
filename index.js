@@ -9,7 +9,7 @@ app.listen()
 const { Client, Intents, MessageEmbed } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
-import { Configuration, OpenAIApi } from "openai";
+const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
     organization: "org-J4xSg1ygSBeeboQfe6NLyza3",
     apiKey: process.env.OPENAI_API_KEY,
