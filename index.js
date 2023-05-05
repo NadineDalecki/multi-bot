@@ -67,7 +67,7 @@ function runBot(token) {
 					message.channel.send("test")
 					const completion = await openai.createCompletion({
 						model: "text-davinci-003",
-						messages: message.cleanContent
+						prompt: message.cleanContent
 					})
 					console.log(completion.data.choices[0])
 					message.reply(completion.data.choices[0].text)
