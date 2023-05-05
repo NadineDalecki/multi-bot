@@ -50,7 +50,8 @@ function runBot(token) {
 	// MESSAGE =====================================
 
 	const { OpenAI } = require("openai-api")
-	const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY})
+	const openai = new OpenAI(process.env.OPENAI_API_KEY)
+	
 
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
@@ -60,7 +61,7 @@ function runBot(token) {
 				//Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
-					const result = await openai.createChatCompletion({
+					const result = await openai.complete({
 						model: "gpt-3.5-turbo",
 						messages: message.cleanContent
 					})
