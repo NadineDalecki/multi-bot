@@ -70,7 +70,8 @@ function runBot(token) {
 							prompt: messageWithoutName
 						},
 						{
-							timeout: 10000
+							timeout: 10000,
+							max_tokens: 1000
 						}
 					)
 					message.channel.send(completion.data.choices[0].text)
