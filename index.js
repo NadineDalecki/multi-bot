@@ -69,7 +69,7 @@ function runBot(token) {
 						model: "text-davinci-003",
 						messages: message.cleanContent
 					})
-
+					console.log(completion.data.choices[0])
 					message.reply(completion.data.choices[0].text)
 				}
 			} else if (message.cleanContent.length < 255) {
