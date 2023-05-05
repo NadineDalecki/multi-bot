@@ -63,16 +63,12 @@ function runBot(token) {
 			else if (client.user.id === "717432759538417747") { //Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
-					const response = await openai.complete({
-						engine: 'davinci',
-						prompt: `Question: ${message.cleanContent}\nAnswer:`,
-						maxTokens: 100,
-						n: 1,
-						stop: '\n',
+					const response = await openai.createChatCompletion({
+						model: 'gpt-3.5-turbo',
+						messages: conversationLog,
 					  });
 				
-					  const answer = response.choices[0].text.trim();
-					  message.channel.send(answer);
+					  message.reply(result.data.choices[0].message);
 				}
 			}
 			
