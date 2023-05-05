@@ -56,36 +56,7 @@ module.exports = {
                 }
             }
             //=========================================================================================================
-            else if (answer.intent === "no division") {
-                
-
-                let master = client.guilds.cache
-                    .get(set[client.user.username].guildId).roles.cache.find(r => r.name === 'VRML Master');
-                let diamond = client.guilds.cache
-                    .get(set[client.user.username].guildId).roles.cache.find(r => r.name === 'VRML Diamond');
-                let platinum = client.guilds.cache
-                    .get(set[client.user.username].guildId).roles.cache.find(r => r.name === 'VRML Platinum');
-                let gold = client.guilds.cache
-                    .get(set[client.user.username].guildId).roles.cache.find(r => r.name === 'VRML Gold');
-                let silver = client.guilds.cache
-                    .get(set[client.user.username].guildId).roles.cache.find(r => r.name === 'VRML Silver');
-                let bronze = client.guilds.cache
-                    .get(set[client.user.username].guildId).roles.cache.find(r => r.name === 'VRML Bronze');
-
-                const divisionRoles = [master.id, diamond.id, platinum.id, gold.id, silver.id, bronze.id]
-
-                client.guilds.cache
-                    .get(set[client.user.username].guildId)
-                    .members.fetch(message.author.id).then(
-                        (member) => { member.roles.remove(divisionRoles) })
-
-                client.guilds.cache
-                    .get(set[client.user.username].guildId)
-                    .members.fetch(message.author.id).then(
-                        (member) => { member.roles.add("847141969235148831")})
-
-                message.reply(answer.response);
-            }
+          
             else if (set["Affen"].roles[answer.intent]) {
                 client.guilds.cache
                     .get(set[client.user.username].guildId)
@@ -98,9 +69,6 @@ module.exports = {
                     .get(set[client.user.username].guildId)
                     .members.fetch(message.author.id).then(
                         (member) => { member.roles.remove(set["Affen"].roles[roleString]) });
-                if (answer.intent == "remove lft") {
-                    message.reply("Yeah no, too lazy to do that anymore. Go to the <#553895148552192000> channel and check the LFT message there!")
-                }
                 message.reply(answer.response);
             }
 
