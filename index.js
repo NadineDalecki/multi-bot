@@ -70,10 +70,7 @@ function runBot(token) {
 							prompt: messageWithoutName
 						},
 						{
-							timeout: 10000,
-							headers: {
-								"Example-Header": "example"
-							}
+							timeout: 10000
 						}
 					)
 					message.channel.send(completion.data.choices[0].text)
