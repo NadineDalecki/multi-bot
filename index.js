@@ -65,7 +65,7 @@ function runBot(token) {
 					message.channel.send("test")
 					const response = await openai.createChatCompletion({
 						model: 'gpt-3.5-turbo',
-						messages: conversationLog,
+						messages: message.cleanContent,
 					  });
 				
 					  message.reply(result.data.choices[0].message);
