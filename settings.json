@@ -10,10 +10,6 @@
             "855095019568627765"
         ],
         "logChannel": "855086292801814538",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": true,
-        "logInvite": true,
         "status": "dnd",
         "activity": {
             "name": "shit talking",
@@ -43,9 +39,6 @@
             
         ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "the Game 💯",
@@ -60,9 +53,6 @@
         "adminRoles": [
                     ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "all the new people",
@@ -77,10 +67,7 @@
         "adminRoles": [
                     ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
-        "status": "online",
+       "status": "online",
         "activity": {
             "name": "the Greek Chorus",
             "type": "WATCHING",
@@ -96,9 +83,6 @@
             "425225020382642176"
         ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "your ideas 💡",
@@ -114,9 +98,6 @@
             
         ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "the Specialists 👀",
@@ -133,9 +114,6 @@
             "763833830233866291"
         ],
         "logChannel": "748550054964494468",
-        "logDel": true,
-        "logEdit": true,
-        "logTimeout": true,
         "status": "online",
         "activity": {
             "name": "the beta testers",
@@ -153,9 +131,6 @@
             "425225020382642176"
         ],
         "logChannel": "724967322867204096",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": true,
         "status": "online",
         "activity": {
             "name": "your questions ❓",
@@ -171,9 +146,6 @@
             "425225020382642176"
         ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
         "status": "dnd",
          "activity": {
             "name": "himself",
@@ -189,9 +161,6 @@
             "421641048155226113"
         ],
         "logChannel": "718176504437276682",
-        "logDel": false,
-        "logEdit": false,
-        "logTimeout": false,
         "status": "online",
         "activity": {
             "name": "in Zero Gravity",

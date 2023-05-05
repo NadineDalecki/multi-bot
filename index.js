@@ -50,28 +50,6 @@ function runBot(token) {
 	})
 	client.login(token)
 
-	// LOGS =====================================
-	client.on("messageDelete", async message => {
-		if (set[client.user.username].logDel == true) {
-			functions.LogDelete(client, message)
-		}
-	})
-	client.on("messageUpdate", (oldMessage, newMessage) => {
-		if (set[client.user.username].logEdit == true) {
-			functions.LogEdit(client, oldMessage, newMessage)
-		}
-	})
-	client.on("guildMemberUpdate", async (oldMember, newMember) => {
-		if (set[client.user.username].logTimeout == true) {
-			functions.LogTimeout(client, oldMember, newMember)
-		}
-	})
-	client.on("guildMemberAdd", async member => {
-		if (set[client.user.username].logInvite == true) {
-			functions.LogInvite(member)
-		}
-	})
-
 	// Daily GIF TG Server =====================================
 	const rule = new schedule.RecurrenceRule()
 	rule.hour = 8
