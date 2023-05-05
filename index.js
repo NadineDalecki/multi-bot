@@ -9,8 +9,7 @@ app.listen()
 const { Client, Intents, MessageEmbed } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
-const { OpenAI } = require("openai")
-const openai = new OpenAIApi(process.env.OPENAI_API_KEY)
+
 
 const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN, process.env.BOT_MO]
 
@@ -50,6 +49,10 @@ function runBot(token) {
 	client.login(token)
 
 	// MESSAGE =====================================
+
+	const { OpenAI } = require("openai")
+	const openai = new OpenAIApi(process.env.OPENAI_API_KEY) 
+	
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
