@@ -70,7 +70,7 @@ function runBot(token) {
 							prompt: messageWithoutName
 						},
 						{
-							timeout: 1000,
+							timeout: 10000,
 							headers: {
 								"Example-Header": "example"
 							}
