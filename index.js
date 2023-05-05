@@ -9,12 +9,12 @@ app.listen()
 const { Client, Intents, MessageEmbed } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
-const { Configuration, OpenAIApi } = require('openai');
+const { OpenAI } = require('openai');
 const configuration = new Configuration({
     organization: "org-J4xSg1ygSBeeboQfe6NLyza3",
     apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAIApi(process.env.OPENAI_API_KEY);
 
 
 const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN, process.env.BOT_MO]
@@ -63,12 +63,12 @@ function runBot(token) {
 			else if (client.user.id === "717432759538417747") { //Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
-					const response = await openai.createChatCompletion({
+					const result = await openai.createChatCompletion({
 						model: 'gpt-3.5-turbo',
 						messages: message.cleanContent,
 					  });
 				
-					  message.reply(result.data.choices[0].message);
+					  message.reply(result.choices[0].message.content);
 				}
 			}
 			
