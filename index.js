@@ -9,8 +9,6 @@ app.listen()
 const { Client, Intents, MessageEmbed } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
-const giphy = require("giphy-api")(process.env.GIPHY)
-const schedule = require("node-schedule")
 
 const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN, process.env.BOT_MO]
 
@@ -33,7 +31,6 @@ function runBot(token) {
 	process.on("unhandledRejection", console.log)
 
 	// READY UP =====================================
-
 	client.once("ready", () => {
 		client.user.setPresence({
 			status: set[client.user.username].status,
@@ -49,18 +46,6 @@ function runBot(token) {
 		console.log(`${client.user.username} | ${serverList}`)
 	})
 	client.login(token)
-
-	// Daily GIF TG Server =====================================
-	const rule = new schedule.RecurrenceRule()
-	rule.hour = 8
-	rule.minute = 1
-
-	const job = schedule.scheduleJob(rule, async function () {
-		if (client.user.username === "TG Bot")
-			giphy.trending({ limit: 1, rating: "g", fmt: "json" }, function (err, res) {
-				client.channels.cache.get("563382017505361940").send(res.data[0].url)
-			})
-	})
 
 	// MESSAGE =====================================
 	client.on("messageCreate", async message => {
