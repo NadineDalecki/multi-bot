@@ -9,6 +9,13 @@ app.listen()
 const { Client, Intents, MessageEmbed } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
+import { Configuration, OpenAIApi } from "openai";
+const configuration = new Configuration({
+    organization: "org-J4xSg1ygSBeeboQfe6NLyza3",
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
 
 const BotTokens = [process.env.BOT_MEL, process.env.BOT_AFFEN, process.env.BOT_ITSY, process.env.BOT_KVN, process.env.BOT_TG, process.env.BOT_IGLE, process.env.BOT_HERMES, process.env.BOT_EWAN, process.env.BOT_MO]
 
@@ -56,6 +63,16 @@ function runBot(token) {
 			else if (client.user.id === "717432759538417747") { //Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
+					const response = await openai.complete({
+						engine: 'davinci',
+						prompt: `Question: ${message.cleanContent}\nAnswer:`,
+						maxTokens: 100,
+						n: 1,
+						stop: '\n',
+					  });
+				
+					  const answer = response.choices[0].text.trim();
+					  message.channel.send(answer);
 				}
 			}
 			

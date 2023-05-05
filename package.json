@@ -1,5 +1,5 @@
 {
-  "name": "A-bot",
+  "name": "a-bot",
   "version": "999.0.0",
   "description": "A friendly bot",
   "main": "index.js",
@@ -24,7 +24,8 @@
     "giphy-api": "^2.0.2",
     "google-spreadsheet": "^3.3.0",
     "node-schedule": "^2.1.0",
-    "googleapis": "^108.0.0"
+    "googleapis": "^108.0.0",
+    "apenai": "^3.2.1"
   },
   "devDependencies": {
     "node": "^16.13.1"
