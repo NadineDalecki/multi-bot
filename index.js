@@ -49,13 +49,11 @@ function runBot(token) {
 
 	// MESSAGE =====================================
 
-	const { Configuration, OpenAIApi } = require("openai");
+	const { Configuration, OpenAIApi } = require("openai")
 	const configuration = new Configuration({
-		apiKey: process.env.OPENAI_API_KEY,
-	  });
-	const openai = new OpenAIApi(configuration);
-
-	
+		apiKey: process.env.OPENAI_API_KEY
+	})
+	const openai = new OpenAIApi(configuration)
 
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
@@ -65,10 +63,18 @@ function runBot(token) {
 				//Mo
 				if (message.mentions.has("717432759538417747")) {
 					message.channel.send("test")
-					const completion = await openai.createCompletion({
-						model: "text-davinci-003",
-						prompt: message.cleanContent
-					})
+					const completion = await openai.createCompletion(
+						{
+							model: "text-davinci-003",
+							prompt: message.cleanContent
+						},
+						{
+							timeout: 1000,
+							headers: {
+								"Example-Header": "example"
+							}
+						}
+					)
 					console.log(completion.data.choices[0])
 					message.reply(completion.data.choices[0].text)
 				}
