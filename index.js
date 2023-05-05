@@ -51,7 +51,7 @@ function runBot(token) {
 	// MESSAGE =====================================
 
 	const { OpenAI } = require("openai")
-	const openai = new OpenAIApi(process.env.OPENAI_API_KEY) 
+	const openai = new OpenAI(process.env.OPENAI_API_KEY) 
 	
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
