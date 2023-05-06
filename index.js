@@ -85,5 +85,5 @@ function runBot(token) {
 				functions.DialogflowIntents(client, message, functions, set)
 			}
 		}
-	})
+	}})
 }
