@@ -53,13 +53,9 @@ function runBot(token) {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
-			} else if (client.user.id === "717432759538417747") { //mo
-				if (message.cleanContent.startsWith(",")) {
-					functions.OpenAIAnswer(client, message)
-				} else if (message.cleanContent.length < 255) {
+			} else if (message.cleanContent.length < 255) {
 					functions.DialogflowIntents(client, message, functions, set)
 				}
 			}
-		}
 	})
 }
