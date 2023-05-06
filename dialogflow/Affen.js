@@ -14,7 +14,7 @@ module.exports = {
 		const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
 		messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 
-		if (!answer) {
+		if (answer) {
 		console.log("there is an answer...")
 			if (answer.intent === "Default Fallback Intent") {
 				functions.OpenAIAnswer(client, message, messageWithCharacter)
