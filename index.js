@@ -64,7 +64,8 @@ function runBot(token) {
 				if (message.cleanContent.startsWith(",")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 					console.log(messageWithoutName)
-					const completion = await openai.createCompletion(
+					try {
+						const completion = await openai.createCompletion(
 						{
 							model: "text-davinci-003",
 							prompt: messageWithoutName,
@@ -76,6 +77,9 @@ function runBot(token) {
 					)
 					message.channel.send(completion.data.choices[0].text)
 				}
+			 catch (e) {
+				console.log(e)
+			}
 			} else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
 			}
