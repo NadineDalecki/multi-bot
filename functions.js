@@ -134,7 +134,7 @@ module.exports = {
 		}
 	},
 	OpenAIAnswer: async function (client, message) {
-		const text = `${set[client.user.username].character} ${message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1).replace(/["]/g, '')}`
+		const text = `${set[client.user.username].character} ${message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1).replace(/("|')/g, "")}`
 		try {
 			const completion = await openai.createCompletion(
 				{
