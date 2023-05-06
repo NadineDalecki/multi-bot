@@ -40,7 +40,7 @@
         "status": "online",
         "activity": {
             "name": "with Affen",
-            "type": "Competing",
+            "type": "COMPETING",
             "url": "https://discord.com"
         }
     },
