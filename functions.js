@@ -160,6 +160,8 @@ module.exports = {
         catch (e) { console.log(message) }
     },
     OpenAIAnswer: async function (character, message) {
+        console.log(character)
+        console.log(message)
         try {
             const completion = await openai.createCompletion({
                     model: "text-davinci-003",
