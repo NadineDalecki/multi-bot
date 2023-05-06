@@ -75,7 +75,7 @@ function runBot(token) {
 							}
 						)
 						console.log("User: " + messageWithoutName)
-						console.log("AI: " + ompletion.data.choices[0].text)
+						console.log("AI: " + completion.data.choices[0].text)
 						message.channel.send(completion.data.choices[0].text)
 					} catch (e) {
 						console.log(e.message)
