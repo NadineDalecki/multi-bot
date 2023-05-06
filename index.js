@@ -68,7 +68,7 @@ function runBot(token) {
 					try {
 						const completion = await openai.createCompletion(
 						{
-							model: "text-davinci-003",
+							model: "text-curie-001",
 							prompt: messageWithoutName,
 							max_tokens: 1000
 						},
