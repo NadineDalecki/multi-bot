@@ -52,7 +52,6 @@ function runBot(token) {
 	const { Configuration, OpenAIApi } = require("openai")
 	const configuration = new Configuration({
 		apiKey: process.env.OPENAI_API_KEY
-		
 	})
 	const openai = new OpenAIApi(configuration)
 
@@ -67,7 +66,7 @@ function runBot(token) {
 					try {
 						const completion = await openai.createCompletion(
 						{
-							model: "curie-001",
+							model: "text-curie-001",
 							prompt: messageWithoutName,
 							max_tokens: 500,
 
