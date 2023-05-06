@@ -1,7 +1,7 @@
 module.exports = {
 			name: "Affen",
 			execute: async function (client, message, functions, set) {
-				messageWithoutName = "uhm"
+				messageWithoutName = ""
 				const axios = require("axios")
 				const adminRoles = set[client.user.username].adminRoles
 		
@@ -11,12 +11,11 @@ module.exports = {
 					messageWithoutName = message.cleanContent
 				}
 		
-				console.log(messageWithoutName)
-				const answer = await functions.DialogflowQuery(client, message, messageWithoutName,)
+				const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
 				console.log(answer.intent)
 
 				if (answer.intent === "Default Fallback Intent") {
-					functions.OpenAIAnswer(client, message)
+					functions.OpenAIAnswer(client, message, messageWithoutName)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
 						if (message.member.roles.cache.some(r => adminRoles.includes(r.id))) {
