@@ -172,6 +172,7 @@ module.exports = {
                     timeout: 10000
                 }
             )
+            console.log(completion.data.choices[0])
             message.channel.send(completion.data.choices[0].text)
         } catch (e) {
             console.log(e.message)
