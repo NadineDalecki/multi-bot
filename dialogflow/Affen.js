@@ -15,6 +15,7 @@ module.exports = {
 		messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 
 		if (!answer) {
+		console.log("there is an answer...")
 			if (answer.intent === "Default Fallback Intent") {
 				functions.OpenAIAnswer(client, message, messageWithCharacter)
 			} else {
