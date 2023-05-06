@@ -12,6 +12,7 @@ module.exports = {
 		console.log(messageWithoutName)
 
 		const answer = await functions.DialogflowQuery(client, messageWithoutName, message)
+        console.log(answer.intent)
 		if (answer.intent === "Default Fallback Intent") {
 			functions.OpenAIAnswer(client, message)
 		} else {
