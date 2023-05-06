@@ -61,7 +61,7 @@ function runBot(token) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
 			} else if (client.user.id === "717432759538417747") { //Mo
-				if (message.mentions.startsWith("<")) {
+				if (message.cleanContent.startsWith(",")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 					console.log(messageWithoutName)
 					const completion = await openai.createCompletion(
