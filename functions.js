@@ -65,6 +65,9 @@ module.exports = {
 			const result = await sessionClient.detectIntent(request)
 			const intent = result[0].queryResult.intent.displayName
 			const response = result[0].queryResult.fulfillmentText
+			console.log(messageWithoutName)
+			console.log(intent)
+			console.log(response)
 			return { result, intent, response }
 		} catch (e) {
 			console.log(e.message)
@@ -138,7 +141,6 @@ module.exports = {
 		}
 	},
 	OpenAIAnswer: async function (client, message, messageWithoutName) {
-
 		console.log(message.cleanContent)
 		console.log(messageWithoutName)
 		try {

@@ -12,7 +12,6 @@ module.exports = {
 				}
 		
 				const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
-
 				messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 
 				if (answer.intent === "Default Fallback Intent") {
