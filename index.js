@@ -67,11 +67,8 @@ function runBot(token) {
 						const completion = await openai.createCompletion(
 						{
 							model: "text-curie-001",
-							prompt: {
-								text: `${message.author.username}: ${messageWithoutName}`,
-								max_tokens: 500,
-							  },
-							 
+							prompt: `${message.author.username}: ${messageWithoutName}`,
+							max_tokens: 500
 						},
 						{
 							timeout: 10000
