@@ -51,7 +51,8 @@ function runBot(token) {
 
 	const { Configuration, OpenAIApi } = require("openai")
 	const configuration = new Configuration({
-		apiKey: process.env.OPENAI_API_KEY
+		apiKey: process.env.OPENAI_API_KEY,
+		organization: "org-S3XBrI75BVCVHxDFcYY212QN"
 	})
 	const openai = new OpenAIApi(configuration)
 
@@ -59,9 +60,8 @@ function runBot(token) {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
-			} else if (client.user.id === "717432759538417747") {
-				//Mo
-				if (message.mentions.has("717432759538417747")) {
+			} else if (client.user.id === "717432759538417747") { //Mo
+				if (message.mentions.startsWith("<")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 					console.log(messageWithoutName)
 					const completion = await openai.createCompletion(
