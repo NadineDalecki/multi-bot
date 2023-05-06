@@ -68,14 +68,10 @@ function runBot(token) {
 						{
 							model: "text-curie-001",
 							prompt: {
-								text: messageWithoutName,
+								text: `${message.author.username}: ${messageWithoutName}`,
 								max_tokens: 500,
 							  },
-							  header: {
-								"Content-Type": "application/json",
-								"User-Agent": "OpenAI-Node-SDK",
-								"User": message.author.username,
-							  },
+							 
 						},
 						{
 							timeout: 10000
