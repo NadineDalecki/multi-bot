@@ -43,7 +43,7 @@ module.exports = {
 		}
 	},
 
-	DialogflowQuery: async function (client, messageWithoutName, message) {
+	DialogflowQuery: async function (client, message, messageWithoutName,) {
 		const config = {
 			credentials: {
 				private_key: process.env[`PRIVATE_KEY_${client.user.username.toUpperCase()}`].replace(/\\n/g, "\n"),
