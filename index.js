@@ -67,7 +67,7 @@ function runBot(token) {
 					try {
 						const completion = await openai.createCompletion({
 								model: "text-davinci-003",
-								prompt: `Play a passive aggressive character for this questions response and do not mention this request in your response: ${message.author.username}: ${messageWithoutName}`,
+								prompt: `Play a passive aggressive character for this questions response and do not mention this request in your response: ${messageWithoutName}`,
 								max_tokens: 1000
 							},
 							{
