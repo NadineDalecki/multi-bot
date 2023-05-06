@@ -43,7 +43,7 @@ module.exports = {
 		}
 	},
 
-	DialogflowQuery: async function (client, message, messageWithoutName,) {
+	DialogflowQuery: async function (client, message, messageWithoutName) {
 		const config = {
 			credentials: {
 				private_key: process.env[`PRIVATE_KEY_${client.user.username.toUpperCase()}`].replace(/\\n/g, "\n"),
@@ -53,22 +53,22 @@ module.exports = {
 		const sessionClient = new dialogflow.SessionsClient(config)
 		const sessionPath = sessionClient.projectAgentSessionPath(process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`], message.author.id.substring(0, 11))
 		try {
-		const request = {
-			session: sessionPath,
-			queryInput: {
-				text: {
-					text: messageWithoutName,
-					languageCode: "en-US"
+			const request = {
+				session: sessionPath,
+				queryInput: {
+					text: {
+						text: messageWithoutName,
+						languageCode: "en-US"
+					}
 				}
 			}
-		}}
-		catch(e) {
+			const result = await sessionClient.detectIntent(request)
+			const intent = result[0].queryResult.intent.displayName
+			const response = result[0].queryResult.fulfillmentText
+			return { result, intent, response }
+		} catch (e) {
 			console.log(e.message)
 		}
-		const result = await sessionClient.detectIntent(request)
-		const intent = result[0].queryResult.intent.displayName
-		const response = result[0].queryResult.fulfillmentText
-		return { result, intent, response }
 	},
 	EmbedBuilder: function (embed) {
 		try {
