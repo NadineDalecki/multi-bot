@@ -141,8 +141,6 @@ module.exports = {
 		}
 	},
 	OpenAIAnswer: async function (client, message, messageWithoutName) {
-		console.log(message.cleanContent)
-		console.log(messageWithoutName)
 		try {
 			const completion = await openai.createCompletion(
 				{
@@ -155,8 +153,8 @@ module.exports = {
 				}
 			)
 			message.channel.send(completion.data.choices[0].text)
-			client.channels.cache.get("718176504437276682").send(message.cleanContent)
-			client.channels.cache.get("718176504437276682").send(completion.data.choices[0].text)
+			console.log(message.cleanContent)
+			console.log(completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
 		}
