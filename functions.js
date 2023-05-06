@@ -3,6 +3,11 @@ const fs = require("fs");
 const set = require("./settings.json");
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const { Collection, MessageEmbed } = require("discord.js");
+const { Configuration, OpenAIApi } = require("openai")
+const configuration = new Configuration({
+		apiKey: process.env.OPENAI_API_KEY
+	})
+const openai = new OpenAIApi(configuration)
 
 module.exports = {
     Command: function (client, message, functions, set) {
@@ -153,6 +158,22 @@ module.exports = {
             }
         }
         catch (e) { console.log(message) }
+    },
+    OpenAIAnswer: async function (character, message) {
+        try {
+            const completion = await openai.createCompletion({
+                    model: "text-davinci-003",
+                    prompt: `${character} ${message}`,
+                    max_tokens: 1000
+                },
+                {
+                    timeout: 10000
+                }
+            )
+            message.channel.send(completion.data.choices[0].text)
+        } catch (e) {
+            console.log(e.message)
+        }
     },
     SpreadsheetGET: async function (client) {
         const doc = new GoogleSpreadsheet(set[client.user.username].spreadsheetID);
