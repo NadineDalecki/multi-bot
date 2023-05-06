@@ -7,7 +7,7 @@ module.exports = {
 
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
 			messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-		} else if (message.channel.type == "DM" || message.cleanContent.toLowerCase().includes("affen")) {
+		} else if (message.channel.type == "DM" || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase())) {
 			messageWithoutName = message.cleanContent
 		}
 
@@ -15,7 +15,6 @@ module.exports = {
 		messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 
 		if (answer) {
-		console.log("there is an answer...")
 			if (answer.intent === "Default Fallback Intent") {
 				functions.OpenAIAnswer(client, message, messageWithCharacter)
 			} else {

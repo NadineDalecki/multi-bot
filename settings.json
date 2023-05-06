@@ -32,6 +32,18 @@
             "Pancake-Sports" :"1099924200543768657"
         }
     },
+    "BB8": {
+        "guildId": "424911215714631690",
+        "prefix": "?",
+        "character":  " ",
+        "logChannel": "718176504437276682",
+        "status": "online",
+        "activity": {
+            "name": "with Affen",
+            "type": "Competing",
+            "url": "https://discord.com"
+        }
+    },
     "Avrel": {
         "spreadsheetID": "1LJ1feFfh69kEIM_oSfcSDvB-wYfrOzOj1Bdz6IIvhAI",
         "guildId": "424911215714631690",
