@@ -1,7 +1,7 @@
 module.exports = {
 			name: "Affen",
 			execute: async function (client, message, functions, set) {
-				const messageWithoutName = undefined
+				messageWithoutName = undefined
 				const axios = require("axios")
 				const adminRoles = set[client.user.username].adminRoles
 		
