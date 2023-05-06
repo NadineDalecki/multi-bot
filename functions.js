@@ -160,7 +160,7 @@ module.exports = {
         catch (e) { console.log(message) }
     },
     OpenAIAnswer: async function (client, message) {
-        const text = `${set[client.user.username].character} ${message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)}`
+        const text = `${set[client.user.username].character} ${message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1).replace(/['"]+/g, '')}`
         try {
             const completion = await openai.createCompletion({
                     model: "text-davinci-003",
