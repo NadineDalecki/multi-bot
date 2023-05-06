@@ -65,7 +65,6 @@ function runBot(token) {
 				if (message.cleanContent.startsWith(",")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 					console.log(messageWithoutName)
-					console.log(completion.data.choices[0])
 					try {
 						const completion = await openai.createCompletion(
 						{
@@ -78,6 +77,7 @@ function runBot(token) {
 							timeout: 10000
 						}
 					)
+					console.log(completion.data.choices[0])
 					message.channel.send(completion.data.choices[0].text)
 				}
 			 catch (e) {
