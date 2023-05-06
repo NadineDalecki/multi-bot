@@ -11,10 +11,11 @@ module.exports = {
 					messageWithoutName = message.cleanContent
 				}
 		
+				
 				const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
 				messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 
-				if (answer.intent === "Default Fallback Intent") {
+				if (!answer.intent && answer.intent === "Default Fallback Intent") {
 					functions.OpenAIAnswer(client, message, messageWithCharacter)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
