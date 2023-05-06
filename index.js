@@ -55,10 +55,10 @@ function runBot(token) {
 				functions.Command(client, message, functions, set, MessageEmbed)
 			} else if (client.user.id === "717432759538417747") { //mo
 				if (message.cleanContent.startsWith(",")) {
-					console.log("1")
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-					console.log("2")
-					functions.OpenAIAnswer(set[client.user.username].character, messageWithoutName)
+					const character = set[client.user.username].character
+					console.log(set[client.user.username].character.prefix)
+					functions.OpenAIAnswer(character, messageWithoutName)
 				} else if (message.cleanContent.length < 255) {
 					functions.DialogflowIntents(client, message, functions, set)
 				}
