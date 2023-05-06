@@ -69,7 +69,7 @@ function runBot(token) {
 							model: "text-curie-001",
 							prompt: {
 								text: messageWithoutName,
-								name: message.author.username,
+								user: message.author.username,
 								max_tokens: 500,
 							  },
 						},
