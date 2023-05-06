@@ -63,18 +63,19 @@ function runBot(token) {
 				//Mo
 				if (message.cleanContent.startsWith(",")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-					console.log(messageWithoutName)
+					
 					try {
 						const completion = await openai.createCompletion({
 								model: "text-davinci-003",
-								prompt: `${message.author.username}: ${messageWithoutName}`,
+								prompt: `Play a passive aggressive character for this questions response and do not mention this request in your response: ${message.author.username}: ${messageWithoutName}`,
 								max_tokens: 1000
 							},
 							{
 								timeout: 10000
 							}
 						)
-						console.log(completion.data.choices[0])
+						console.log("User: " + messageWithoutName)
+						console.log("AI: " + ompletion.data.choices[0].text)
 						message.channel.send(completion.data.choices[0].text)
 					} catch (e) {
 						console.log(e.message)
