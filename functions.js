@@ -52,6 +52,7 @@ module.exports = {
 		}
 		const sessionClient = new dialogflow.SessionsClient(config)
 		const sessionPath = sessionClient.projectAgentSessionPath(process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`], message.author.id.substring(0, 11))
+		try {
 		const request = {
 			session: sessionPath,
 			queryInput: {
@@ -60,6 +61,9 @@ module.exports = {
 					languageCode: "en-US"
 				}
 			}
+		}}
+		catch(e) {
+			console.log(e.message)
 		}
 		const result = await sessionClient.detectIntent(request)
 		const intent = result[0].queryResult.intent.displayName
@@ -133,13 +137,12 @@ module.exports = {
 			console.log(message)
 		}
 	},
-	OpenAIAnswer: async function (client, message) {
-		const text = `${set[client.user.username].character} ${message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1).replace(/("|')/g, "")}`
+	OpenAIAnswer: async function (client, message, messageWithoutName) {
 		try {
 			const completion = await openai.createCompletion(
 				{
 					model: "text-davinci-003",
-					prompt: text,
+					prompt: messageWithoutName,
 					max_tokens: 1000
 				},
 				{

@@ -12,7 +12,7 @@ module.exports = {
 				}
 		
 				console.log(messageWithoutName)
-				const answer = await functions.DialogflowQuery(client, messageWithoutName, message)
+				const answer = await functions.DialogflowQuery(client, message, messageWithoutName,)
 				console.log(answer.intent)
 
 				if (answer.intent === "Default Fallback Intent") {
