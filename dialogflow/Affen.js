@@ -12,10 +12,11 @@ module.exports = {
 				}
 		
 				const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
-				console.log(answer.intent)
+
+				messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 
 				if (answer.intent === "Default Fallback Intent") {
-					functions.OpenAIAnswer(client, message, messageWithoutName)
+					functions.OpenAIAnswer(client, message, messageWithCharacter)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
 						if (message.member.roles.cache.some(r => adminRoles.includes(r.id))) {
@@ -55,12 +56,12 @@ module.exports = {
 						}
 					}
 					//=========================================================================================================
-					else if (set["Affen"].roles[answer.intent]) {
+					else if (set[client.user.username].roles[answer.intent]) {
 						client.guilds.cache
 							.get(set[client.user.username].guildId)
 							.members.fetch(message.author.id)
 							.then(member => {
-								member.roles.add(set["Affen"].roles[answer.intent])
+								member.roles.add(set[client.user.username].roles[answer.intent])
 							})
 						message.channel.send(answer.response)
 					} else if (answer.intent.substring(0, 6) === "remove") {
@@ -69,7 +70,7 @@ module.exports = {
 							.get(set[client.user.username].guildId)
 							.members.fetch(message.author.id)
 							.then(member => {
-								member.roles.remove(set["Affen"].roles[roleString])
+								member.roles.remove(set[client.user.username].roles[roleString])
 							})
 						message.channel.send(answer.response)
 					}
