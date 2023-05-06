@@ -5,9 +5,9 @@ module.exports = {
 				const axios = require("axios")
 				const adminRoles = set[client.user.username].adminRoles
 		
-				if (message.mentions.has(client.user.id) || message.cleanContent.startsWith(client.user.username + " ") || message.cleanContent.startsWith(client.user.username.toLowerCase() + " ")) {
+				if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-				} else if (message.channel.type == "DM") {
+				} else if (message.channel.type == "DM" || message.cleanContent.toLowerCase().includes("affen")) {
 					messageWithoutName = message.cleanContent
 				}
 		
