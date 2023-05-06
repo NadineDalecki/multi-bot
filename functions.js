@@ -161,7 +161,6 @@ module.exports = {
     },
     OpenAIAnswer: async function (client, message) {
         const text = `${set[client.user.username].character} ${message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)}`
-        console.log(text)
         try {
             const completion = await openai.createCompletion({
                     model: "text-davinci-003",
@@ -172,7 +171,6 @@ module.exports = {
                     timeout: 10000
                 }
             )
-            console.log(completion.data.choices[0])
             message.channel.send(completion.data.choices[0].text)
         } catch (e) {
             console.log(e.message)
