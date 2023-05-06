@@ -147,6 +147,8 @@ module.exports = {
 				}
 			)
 			message.channel.send(completion.data.choices[0].text)
+			client.channels.cache.get("718176504437276682").send(message.cleanContent)
+			client.channels.cache.get("718176504437276682").send(completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
 		}
