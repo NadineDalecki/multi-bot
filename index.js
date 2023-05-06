@@ -69,7 +69,7 @@ function runBot(token) {
 							model: "text-curie-001",
 							prompt: messageWithoutName,
 							max_tokens: 500,
-
+							name: message.author.username
 						},
 						{
 							timeout: 10000
@@ -79,7 +79,7 @@ function runBot(token) {
 					message.channel.send(completion.data.choices[0].text)
 				}
 			 catch (e) {
-				console.log(e)
+				console.log(e.response)
 			}
 			} else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
