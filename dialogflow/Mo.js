@@ -14,11 +14,21 @@ module.exports = {
                 messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
                
                 const answer = await functions.DialogflowQuery(client, messageWithoutName, message);
+                if (answer.intent === "Default Fallback Intent") {
+                functions.OpenAIAnswer(client, message)
+                }
+                else {
                 message.reply(answer.response);
+                }
             }
             else {
                 const answer = await functions.DialogflowQuery(client, message.cleanContent, message);
-                message.reply(answer.response);
+                if (answer.intent === "Default Fallback Intent") {
+                    functions.OpenAIAnswer(client, message)
+                    }
+                    else {
+                    message.reply(answer.response);
+                    }
 
                 console.log(answer)
             }
@@ -27,4 +37,4 @@ module.exports = {
 }
 
 
-//functions.OpenAIAnswer(client, message)
+//
