@@ -59,30 +59,27 @@ function runBot(token) {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
-			} else if (client.user.id === "717432759538417747") { //Mo
+			} else if (client.user.id === "717432759538417747") {
+				//Mo
 				if (message.cleanContent.startsWith(",")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 					console.log(messageWithoutName)
 					try {
-						const completion = await openai.createCompletion(
-						{
+						const completion = await openai.createCompletion({
 							model: "text-curie-001",
 							prompt: `${message.author.username}: ${messageWithoutName}`,
-							max_tokens: 500
-						},
-						{
+							max_tokens: 500,
 							timeout: 10000
-						}
-					)
-					console.log(completion.data.choices[0])
-					message.channel.send(completion.data.choices[0].text)
+						})
+						console.log(completion.data.choices[0])
+						message.channel.send(completion.data.choices[0].text)
+					} catch (e) {
+						console.log(e.message)
+					}
+				} else if (message.cleanContent.length < 255) {
+					functions.DialogflowIntents(client, message, functions, set)
 				}
-			 catch (e) {
-				console.log(e.message)
-			}
-			} else if (message.cleanContent.length < 255) {
-				functions.DialogflowIntents(client, message, functions, set)
 			}
 		}
-	}})
+	})
 }
