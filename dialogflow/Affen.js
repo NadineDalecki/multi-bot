@@ -117,6 +117,9 @@ module.exports = {
 								}
 							})
 					}
+					else {
+						message.reply(answer.response)
+					}
 				}
 			}
 		}
