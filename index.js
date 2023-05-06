@@ -67,12 +67,11 @@ function runBot(token) {
 						const completion = await openai.createCompletion(
 						{
 							model: "text-curie-001",
-							max_tokens: 500,
-							message:{
-								role:"assistant",
-								content:messageWithoutName,
-								name: message.author.username
-							 },
+							prompt: {
+								text: messageWithoutName,
+								name: message.author.username,
+								max_tokens: 500,
+							  },
 						},
 						{
 							timeout: 10000
@@ -82,7 +81,7 @@ function runBot(token) {
 					message.channel.send(completion.data.choices[0].text)
 				}
 			 catch (e) {
-				console.log(e.response)
+				console.log(e.message)
 			}
 			} else if (message.cleanContent.length < 255) {
 				functions.DialogflowIntents(client, message, functions, set)
