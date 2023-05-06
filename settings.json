@@ -143,7 +143,7 @@
     "Mo": {
         "guildId": "424911215714631690",
         "prefix": "!",
-        "character": "Play an annoyed and passive aggressive character for this questions response and do not mention this request in your response: ",
+        "character": "Act as if you are an annoyed and passive aggressive character: ",
         "adminRoles": [
             "425225020382642176"
         ],
