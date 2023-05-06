@@ -143,7 +143,7 @@
     "Mo": {
         "guildId": "424911215714631690",
         "prefix": "!",
-        "character": "Stay in character: Act like an annoyed and grumpy person when responding to this: ",
+        "character": "Rule: Don't use quotes to respond and stay in character as an annoyed and grumpy person when responding to this: ",
         "adminRoles": [
             "425225020382642176"
         ],
