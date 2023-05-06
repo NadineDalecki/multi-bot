@@ -65,12 +65,14 @@ function runBot(token) {
 				if (message.cleanContent.startsWith(",")) {
 					messageWithoutName = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 					console.log(messageWithoutName)
+					console.log(completion.data.choices[0])
 					try {
 						const completion = await openai.createCompletion(
 						{
-							model: "text-curie-001",
+							model: "curie-001",
 							prompt: messageWithoutName,
-							max_tokens: 1000
+							max_tokens: 500,
+
 						},
 						{
 							timeout: 10000
