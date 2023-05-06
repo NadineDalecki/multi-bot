@@ -66,11 +66,14 @@ function runBot(token) {
 					console.log(messageWithoutName)
 					try {
 						const completion = await openai.createCompletion({
-							model: "text-curie-001",
-							prompt: `${message.author.username}: ${messageWithoutName}`,
-							max_tokens: 500,
-							timeout: 10000
-						})
+								model: "text-davinci-003",
+								prompt: `${message.author.username}: ${messageWithoutName}`,
+								max_tokens: 1000
+							},
+							{
+								timeout: 10000
+							}
+						)
 						console.log(completion.data.choices[0])
 						message.channel.send(completion.data.choices[0].text)
 					} catch (e) {
