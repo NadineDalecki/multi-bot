@@ -118,7 +118,12 @@ module.exports = {
 							})
 					}
 					else {
+						try{
 						message.reply(answer.response)
+						}
+						catch (e) {
+							console.log(e.message)
+						}
 					}
 				}
 			}
