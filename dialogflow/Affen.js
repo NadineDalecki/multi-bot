@@ -1,7 +1,6 @@
 module.exports = {
 	name: "Affen",
 	execute: async function (client, message, functions, set) {
-		messageWithoutName = ""
 		const axios = require("axios")
 		const adminRoles = set[client.user.username].adminRoles
 
@@ -9,8 +8,7 @@ module.exports = {
 			const answer = await functions.DialogflowQuery(client, message)
 
 			if (answer) {
-				if (answer.intent === "Default Fallback Intent") {
-					
+				if (answer.intent === "Default Fallback Intent") {	
 					functions.OpenAIAnswer(client, message, text)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
@@ -108,7 +106,6 @@ module.exports = {
 							})
 					} else {
 						try {
-							console.log("Other intent triggered")
 							message.channel.send(answer.response)
 						} catch (e) {
 							console.log(e.message)

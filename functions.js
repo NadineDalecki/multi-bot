@@ -148,7 +148,7 @@ module.exports = {
 			console.log(message)
 		}
 	},
-	OpenAIAnswer: async function (client, message, text) {
+	OpenAIAnswer: async function (client, message) {
 		const text = functions.CleanMessage(client, message)
 		try {
 			const completion = await openai.createCompletion(
