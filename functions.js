@@ -14,7 +14,7 @@ module.exports = {
 		console.log("Before: " + message.cleanContent)
 		cleanMessage = message.cleanContent
 		let firstWord =message.cleanContent.split(" ")
-		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || args[0].match(MessageMentions(client.user.id))) {
+		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 		}
 			else {
