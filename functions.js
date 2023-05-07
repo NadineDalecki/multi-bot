@@ -28,16 +28,16 @@ module.exports = {
 			console.error(error)
 		}
 	},
-	DialogflowIntents: function (client, message, functions, set) {
-		client.dialogues = new Collection()
+	AI: function (client, message, functions, set) {
+		client.ai = new Collection()
 		const dialogflowFiles = fs.readdirSync("./dialogflow").filter(file => file.endsWith(".js"))
 		for (const file of dialogflowFiles) {
 			const dialog = require(`./dialogflow/${file}`)
-			client.dialogues.set(dialog.name, dialog)
+			client.ai.set(dialog.name, dialog)
 		}
-		if (!client.dialogues.has(client.user.username)) return
+		if (!client.ai.has(client.user.username)) return
 		try {
-			client.dialogues.get(client.user.username).execute(client, message, functions, set, MessageEmbed)
+			client.ai.get(client.user.username).execute(client, message, functions, set, MessageEmbed)
 		} catch (error) {
 			console.error(error)
 		}
