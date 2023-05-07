@@ -10,6 +10,17 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 module.exports = {
+	CleanMessage: async function(message) {
+		console.log(message.cleanContent)
+		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
+			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+			return { cleanMessage }
+		}
+			else {
+				cleanMessage = message.cleanContent
+				return { cleanMessage }
+			}
+	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
 		const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
