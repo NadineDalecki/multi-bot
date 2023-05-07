@@ -11,13 +11,13 @@ const openai = new OpenAIApi(configuration)
 
 module.exports = {
 	CleanMessage: async function(message) {
-		console.log(message.cleanContent)
-		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
-			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+		console.log(message)
+		if (message.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
+			cleanMessage = message.substr(message.indexOf(" ") + 1)
 			return { cleanMessage }
 		}
 			else {
-				cleanMessage = message.cleanContent
+				cleanMessage = message
 				return { cleanMessage }
 			}
 	},
