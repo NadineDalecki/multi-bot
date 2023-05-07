@@ -21,7 +21,7 @@ module.exports = {
 				cleanMessage = message.cleanContent
 				console.log("second if")
 			}
-		return { cleanMessage }
+		return cleanMessage 
 	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
