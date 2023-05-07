@@ -9,7 +9,7 @@ module.exports = {
 
 			if (answer) {
 				if (answer.intent === "Default Fallback Intent") {	
-					functions.OpenAIAnswer(client, message, text)
+					functions.OpenAIAnswer(client, message)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
 						if (message.member.roles.cache.some(r => adminRoles.includes(r.id))) {

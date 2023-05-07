@@ -62,13 +62,18 @@ module.exports = {
 		}
 		const sessionClient = new dialogflow.SessionsClient(config)
 		const sessionPath = sessionClient.projectAgentSessionPath(process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`], message.author.id.substring(0, 11))
-		const text = functions.CleanMessage(client, message)
+		let cleanMessage = message.cleanContent
+		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
+			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+		} else {
+			cleanMessage = message.cleanContent
+		}
 		try {
 			const request = {
 				session: sessionPath,
 				queryInput: {
 					text: {
-						text: text,
+						text: cleanMessage,
 						languageCode: "en-US"
 					}
 				}
@@ -150,12 +155,17 @@ module.exports = {
 		}
 	},
 	OpenAIAnswer: async function (client, message) {
-		const text = functions.CleanMessage(client, message)
+		let cleanMessage = message.cleanContent
+		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
+			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+		} else {
+			cleanMessage = message.cleanContent
+		}
 		try {
 			const completion = await openai.createCompletion(
 				{
 					model: "text-davinci-003",
-					prompt: `${set[client.user.username].character} ${text}`,
+					prompt: `${set[client.user.username].character} ${cleanMessage}`,
 					max_tokens: 1000
 				},
 				{
