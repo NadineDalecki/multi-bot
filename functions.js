@@ -13,8 +13,8 @@ module.exports = {
 	CleanMessage: function(client, message) {
 		console.log("Before: " + message.cleanContent)
 		cleanMessage = message.cleanContent
-		let firstWord =message.cleanContent.split(" ")[0]
-		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || firstWord.has(client.user.id) || firstWord.has("@Affen")) {
+		let firstWord =message.cleanContent.split(" ")
+		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || args[0].match(MessageMentions(client.user.id))) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 		}
 			else {
