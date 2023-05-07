@@ -74,7 +74,6 @@ module.exports = {
 			const result = await sessionClient.detectIntent(request)
 			const intent = result[0].queryResult.intent.displayName
 			const response = result[0].queryResult.fulfillmentText
-			console.log("User message: " + messageWithoutName)
 			console.log("Intent: " + intent)
 			return { result, intent, response }
 		} catch (e) {
@@ -162,7 +161,6 @@ module.exports = {
 				}
 			)
 			message.channel.send(completion.data.choices[0].text.split('"').join(""))
-			console.log("AI: " + completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
 		}

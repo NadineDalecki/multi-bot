@@ -48,7 +48,6 @@ function runBot(token) {
 	client.login(token)
 
 	// MESSAGE =====================================
-
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
