@@ -11,7 +11,7 @@ module.exports = {
 			messageWithoutName = message.cleanContent
 		}
         const text = functions.CleanMessage(client, message)
-		console.log("Text is: " + text)
+		console.log("After: " + text)
 		const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
 		messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
 

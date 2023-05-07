@@ -15,11 +15,13 @@ module.exports = {
 		cleanMessage = message.cleanContent
 		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+			console.log("First if")
 		}
 			else {
 				cleanMessage = message.cleanContent
+				console.log("second if")
 			}
-			console.log("After:" + cleanMessage)
+		return { cleanMessage }
 	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
