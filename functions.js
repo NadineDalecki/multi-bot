@@ -157,7 +157,7 @@ module.exports = {
 		try {
 			const completion = await openai.createCompletion(
 				{
-					model: "gpt-3.5-turbo",
+					model: "text-davinci-003",
 					prompt: `${set[client.user.username].character} ${cleanMessage}`,
 					max_tokens: 1000
 				},
