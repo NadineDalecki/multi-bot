@@ -57,10 +57,6 @@ module.exports = {
                     message.channel.send({ embeds: [embed] });
                 }
                 //=========================================================================================================
-                else if (answer.intent === "Spam | Spoon") {
-                    message.react("754602236163915788");
-                }
-                //=========================================================================================================
                 else if (answer.intent.substring(0, 4) === "Spam") {
                     const allowedChannels = ["328962843800109067", "688765312023396374"]; //bot channel, meme channel
                     if (
