@@ -11,7 +11,7 @@ const openai = new OpenAIApi(configuration)
 
 module.exports = {
 	CleanMessage: function(client, message) {
-		console.log(message.cleanContent)
+		console.log("Before: " + message.cleanContent)
 		cleanMessage = message.cleanContent
 		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
@@ -19,7 +19,7 @@ module.exports = {
 			else {
 				cleanMessage = message.cleanContent
 			}
-			return { cleanMessage}
+			console.log("After:" + cleanMessage)
 	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
