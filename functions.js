@@ -42,7 +42,6 @@ module.exports = {
 			console.error(error)
 		}
 	},
-
 	DialogflowQuery: async function (client, message) {
 		const config = {
 			credentials: {
