@@ -2,18 +2,10 @@ module.exports = {
     name: "Mel",
     execute: async function(client, message, functions, set, MessageEmbed) {
 
-        if (message.channel.type == "DM" ||
-            message.mentions.has(client.user.id) ||
-            message.cleanContent.startsWith(client.user.username + " ") ||
-            message.cleanContent.startsWith(client.user.username.toLowerCase() + " ")) {
-                const answer = await functions.DialogflowQuery(client, message.cleanContent, message);
+        if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase()) || message.channel.type == "DM") {
+            const answer = await functions.DialogflowQuery(client, message);
             const data = await functions.SpreadsheetGET(client);
-
-            //=========================================================================================================
-            if (
-                message.channel.type == "DM" ||
-                !message.member.roles.cache.has("748631446217818123")
-            ) {
+        
                 //=========================================================================================================
                 if (answer.intent.substring(0, 5) === "embed") {
                     const rows = await data.doc.sheetsByTitle["Embeds"].getRows();
@@ -103,7 +95,6 @@ module.exports = {
                 else if (message.channel.id !== "333796567746084864") {
                     message.reply(answer.response);
                 }
-            }
         }
         // MENTIONS ==========================================================
         else if (!message.author.bot) {
