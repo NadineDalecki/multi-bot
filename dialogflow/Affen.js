@@ -7,13 +7,12 @@ module.exports = {
 
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.channel.type == "DM") {
 			const text = functions.CleanMessage(client, message)
-
 			const answer = await functions.DialogflowQuery(client, message, text)
 
 			if (answer) {
 				if (answer.intent === "Default Fallback Intent") {
-					messageWithCharacter = `${set[client.user.username].character} ${text}`
-					functions.OpenAIAnswer(client, message, messageWithCharacter)
+					
+					functions.OpenAIAnswer(client, message, text)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
 						if (message.member.roles.cache.some(r => adminRoles.includes(r.id))) {

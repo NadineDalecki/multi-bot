@@ -11,7 +11,6 @@ const openai = new OpenAIApi(configuration)
 
 module.exports = {
 	CleanMessage: function(client, message) {
-		console.log("Before: " + message.cleanContent)
 		cleanMessage = message.cleanContent
 		let firstWord =message.cleanContent.split(" ")
 		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
@@ -152,7 +151,8 @@ module.exports = {
 			console.log(message)
 		}
 	},
-	OpenAIAnswer: async function (client, message, messageWithoutName) {
+	OpenAIAnswer: async function (client, message, text) {
+		messageWithCharacter = `${set[client.user.username].character} ${text}`
 		try {
 			const completion = await openai.createCompletion(
 				{
