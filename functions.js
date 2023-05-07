@@ -10,7 +10,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 module.exports = {
-	CleanMessage: async function(message) {
+	CleanMessage: async function(client, message) {
 		console.log(message)
 		if (message.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
 			cleanMessage = message.substr(message.indexOf(" ") + 1)
