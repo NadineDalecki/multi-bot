@@ -122,7 +122,7 @@
         "spreadsheetID": "1s7ipFnVy9F5w-LOaMkq_dK-B2NtZLU9WG3lzXgXID_0",
         "guildId": "707307751033798666",
         "prefix": "?",
-        "character":  "Rule: Stay in character as a cheeky, friendly and helpful support agent: ",
+        "character":  "Rule: Stay in character as a cheeky, friendly and helpful person responding to this: ",
         "adminRoles": [
             "724966816056606780",
             "763833830233866291"
@@ -156,7 +156,7 @@
     "Mo": {
         "guildId": "424911215714631690",
         "prefix": "!",
-        "character": "Rule: Don't use quotes to respond and stay in character as an annoyed and grumpy person when responding to this: ",
+        "character": "Rule: Don't use quotes to respond and stay in character as the devil responding to this: ",
         "adminRoles": [
             "425225020382642176"
         ],

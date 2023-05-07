@@ -64,10 +64,6 @@ module.exports = {
 					}
 
 					//=========================================================================================================
-					else if (answer.intent === "Spam | Spoon") {
-						message.react("587741249214218260")
-					}
-					//=========================================================================================================
 					else if (answer.intent === "Spoon me") {
 						client.guilds.cache
 							.get(set[client.user.username].guildId)
