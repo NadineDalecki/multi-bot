@@ -10,6 +10,20 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 module.exports = {
+	AI: function (client, message, functions, set) {
+		client.ai = new Collection()
+		const aiFiles = fs.readdirSync("./ai").filter(file => file.endsWith(".js"))
+		for (const file of aiFiles) {
+			const dialog = require(`./ai/${file}`)
+			client.ai.set(dialog.name, dialog)
+		}
+		if (!client.ai.has(client.user.username)) return
+		try {
+			client.ai.get(client.user.username).execute(client, message, functions, set, MessageEmbed)
+		} catch (error) {
+			console.error(error)
+		}
+	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
 		const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
@@ -24,20 +38,6 @@ module.exports = {
 			if (command !== "") {
 				client.commands.get(command).execute(client, message, functions, args, set, MessageEmbed)
 			}
-		} catch (error) {
-			console.error(error)
-		}
-	},
-	AI: function (client, message, functions, set) {
-		client.ai = new Collection()
-		const aiFiles = fs.readdirSync("./ai").filter(file => file.endsWith(".js"))
-		for (const file of aiFiles) {
-			const dialog = require(`./ai/${file}`)
-			client.ai.set(dialog.name, dialog)
-		}
-		if (!client.ai.has(client.user.username)) return
-		try {
-			client.ai.get(client.user.username).execute(client, message, functions, set, MessageEmbed)
 		} catch (error) {
 			console.error(error)
 		}
