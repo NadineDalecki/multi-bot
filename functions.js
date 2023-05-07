@@ -152,12 +152,11 @@ module.exports = {
 	},
 	OpenAIAnswer: async function (client, message, text) {
 		messageWithCharacter = `${set[client.user.username].character} ${text}`
-		console.log("messageWithCharacter" + messageWithCharacter)
 		try {
 			const completion = await openai.createCompletion(
 				{
 					model: "text-davinci-003",
-					prompt: messageWithoutName,
+					prompt: messageWithCharacter,
 					max_tokens: 1000
 				},
 				{
