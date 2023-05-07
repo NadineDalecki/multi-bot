@@ -11,7 +11,6 @@ module.exports = {
 
 			if (answer) {
 				if (answer.intent === "Default Fallback Intent") {
-					
 					functions.OpenAIAnswer(client, message, text)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
@@ -109,6 +108,7 @@ module.exports = {
 							})
 					} else {
 						try {
+							console.log("Other intent triggered")
 							message.channel.send(answer.response)
 						} catch (e) {
 							console.log(e.message)
