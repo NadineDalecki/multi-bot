@@ -3,8 +3,6 @@ module.exports = {
 	execute: async function (client, message, functions, set, MessageEmbed) {
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase()) || message.channel.type == "DM") {
 			const answer = await functions.DialogflowQuery(client, message)
-
-			const answer = await functions.DialogflowQuery(client, message.cleanContent, message)
 			const data = await functions.SpreadsheetGET(client)
 
 			if (answer.intent.substring(0, 5) === "embed") {
