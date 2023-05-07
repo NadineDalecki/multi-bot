@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 })
 app.listen()
 
-const { Client, Intents} = require("discord.js")
+const { Client, Intents } = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
 
@@ -50,9 +50,9 @@ function runBot(token) {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
-			} else if (message.cleanContent.length < 255) {
-					functions.AI(client, message, functions, set)
-				}
+			} else {
+				functions.AI(client, message, functions, set)
 			}
+		}
 	})
 }

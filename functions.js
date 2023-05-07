@@ -43,37 +43,41 @@ module.exports = {
 		}
 	},
 	DialogflowQuery: async function (client, message) {
-		const config = {
-			credentials: {
-				private_key: process.env[`PRIVATE_KEY_${client.user.username.toUpperCase()}`].replace(/\\n/g, "\n"),
-				client_email: process.env[`CLIENT_EMAIL_${client.user.username.toUpperCase()}`]
-			}
-		}
-		const sessionClient = new dialogflow.SessionsClient(config)
-		const sessionPath = sessionClient.projectAgentSessionPath(process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`], message.author.id.substring(0, 11))
-		let cleanMessage = message.cleanContent
-		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
-			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-		} else {
-			cleanMessage = message.cleanContent
-		}
-		try {
-			const request = {
-				session: sessionPath,
-				queryInput: {
-					text: {
-						text: cleanMessage,
-						languageCode: "en-US"
-					}
+		if (message.cleanContent.length < 255) {
+			const config = {
+				credentials: {
+					private_key: process.env[`PRIVATE_KEY_${client.user.username.toUpperCase()}`].replace(/\\n/g, "\n"),
+					client_email: process.env[`CLIENT_EMAIL_${client.user.username.toUpperCase()}`]
 				}
 			}
-			const result = await sessionClient.detectIntent(request)
-			const intent = result[0].queryResult.intent.displayName
-			const response = result[0].queryResult.fulfillmentText
-			console.log("Intent: " + intent)
-			return { result, intent, response }
-		} catch (e) {
-			console.log(e.message)
+			const sessionClient = new dialogflow.SessionsClient(config)
+			const sessionPath = sessionClient.projectAgentSessionPath(process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`], message.author.id.substring(0, 11))
+			let cleanMessage = message.cleanContent
+			if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
+				cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+			} else {
+				cleanMessage = message.cleanContent
+			}
+			try {
+				const request = {
+					session: sessionPath,
+					queryInput: {
+						text: {
+							text: cleanMessage,
+							languageCode: "en-US"
+						}
+					}
+				}
+				const result = await sessionClient.detectIntent(request)
+				const intent = result[0].queryResult.intent.displayName
+				const response = result[0].queryResult.fulfillmentText
+				console.log("Intent: " + intent)
+				return { result, intent, response }
+			} catch (e) {
+				console.log(e.message)
+			}
+		} else {
+			channel.message.send("🙈")
 		}
 	},
 	EmbedBuilder: function (embed) {

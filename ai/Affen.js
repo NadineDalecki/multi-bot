@@ -8,7 +8,7 @@ module.exports = {
 			const answer = await functions.DialogflowQuery(client, message)
 
 			if (answer) {
-				if (answer.intent === "Default Fallback Intent") {	
+				if (answer.intent === "Default Fallback Intent") {
 					functions.OpenAIAnswer(client, message)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
