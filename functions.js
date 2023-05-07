@@ -10,15 +10,14 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 module.exports = {
-	CleanMessage: function(client, message) {
+	CleanMessage: function (client, message) {
 		cleanMessage = message.cleanContent
 		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
+		} else {
+			cleanMessage = message.cleanContent
 		}
-			else {
-				cleanMessage = message.cleanContent
-			}
-		return cleanMessage 
+		return cleanMessage
 	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
@@ -162,7 +161,7 @@ module.exports = {
 					timeout: 10000
 				}
 			)
-			message.channel.send(completion.data.choices[0].split('"').join(''))
+			message.channel.send(completion.data.choices[0].split('"').join(""))
 			console.log("AI: " + completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
