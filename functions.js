@@ -30,9 +30,9 @@ module.exports = {
 	},
 	AI: function (client, message, functions, set) {
 		client.ai = new Collection()
-		const dialogflowFiles = fs.readdirSync("./dialogflow").filter(file => file.endsWith(".js"))
-		for (const file of dialogflowFiles) {
-			const dialog = require(`./dialogflow/${file}`)
+		const aiFiles = fs.readdirSync("./ai").filter(file => file.endsWith(".js"))
+		for (const file of aiFiles) {
+			const dialog = require(`./ai/${file}`)
 			client.ai.set(dialog.name, dialog)
 		}
 		if (!client.ai.has(client.user.username)) return
