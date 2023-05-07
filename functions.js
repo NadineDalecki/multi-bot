@@ -52,7 +52,7 @@ module.exports = {
 		}
 	},
 
-	DialogflowQuery: async function (client, message, messageWithoutName) {
+	DialogflowQuery: async function (client, message) {
 		const config = {
 			credentials: {
 				private_key: process.env[`PRIVATE_KEY_${client.user.username.toUpperCase()}`].replace(/\\n/g, "\n"),
@@ -61,12 +61,13 @@ module.exports = {
 		}
 		const sessionClient = new dialogflow.SessionsClient(config)
 		const sessionPath = sessionClient.projectAgentSessionPath(process.env[`PROJECT_ID_${client.user.username.toUpperCase()}`], message.author.id.substring(0, 11))
+		const text = functions.CleanMessage(client, message)
 		try {
 			const request = {
 				session: sessionPath,
 				queryInput: {
 					text: {
-						text: messageWithoutName,
+						text: text,
 						languageCode: "en-US"
 					}
 				}
@@ -148,12 +149,12 @@ module.exports = {
 		}
 	},
 	OpenAIAnswer: async function (client, message, text) {
-		messageWithCharacter = `${set[client.user.username].character} ${text}`
+		const text = functions.CleanMessage(client, message)
 		try {
 			const completion = await openai.createCompletion(
 				{
 					model: "text-davinci-003",
-					prompt: messageWithCharacter,
+					prompt: `${set[client.user.username].character} ${text}`,
 					max_tokens: 1000
 				},
 				{

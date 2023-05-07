@@ -5,7 +5,7 @@ module.exports = {
         if (message.mentions.has(client.user.id) ||
             message.channel.type == "DM") {
 
-                const answer = await functions.DialogflowQuery(client, message.cleanContent, message);
+            const answer = await functions.DialogflowQuery(client, message.cleanContent, message);
             const axios = require("axios");
             const CollectionList = await axios.request({
                 url:

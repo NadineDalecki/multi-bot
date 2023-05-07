@@ -6,11 +6,11 @@ module.exports = {
 		const adminRoles = set[client.user.username].adminRoles
 
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase()) || message.channel.type == "DM") {
-			const text = functions.CleanMessage(client, message)
-			const answer = await functions.DialogflowQuery(client, message, text)
+			const answer = await functions.DialogflowQuery(client, message)
 
 			if (answer) {
 				if (answer.intent === "Default Fallback Intent") {
+					
 					functions.OpenAIAnswer(client, message, text)
 				} else {
 					if (message.content.toLowerCase().includes("slap")) {
