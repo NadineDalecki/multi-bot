@@ -1,4 +1,5 @@
 const dialogflow = require("@google-cloud/dialogflow")
+const functions = require("./functions.js")
 const fs = require("fs")
 const set = require("./settings.json")
 const { GoogleSpreadsheet } = require("google-spreadsheet")
