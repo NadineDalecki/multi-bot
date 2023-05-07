@@ -13,13 +13,11 @@ module.exports = {
 	CleanMessage: function(client, message) {
 		console.log("Before: " + message.cleanContent)
 		cleanMessage = message.cleanContent
-		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("@" + client.user.id)) {
+		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.cleanContent.startsWith("@Affen")) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-			console.log("First if")
 		}
 			else {
 				cleanMessage = message.cleanContent
-				console.log("second if")
 			}
 		return cleanMessage 
 	},
