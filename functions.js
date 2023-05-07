@@ -12,14 +12,14 @@ const openai = new OpenAIApi(configuration)
 module.exports = {
 	CleanMessage: async function(client, message) {
 		console.log(message)
+		cleanMessage = message
 		if (message.toLowerCase().startsWith(client.user.username.toLowerCase() + " ")) {
 			cleanMessage = message.substr(message.indexOf(" ") + 1)
-			return { cleanMessage }
 		}
 			else {
 				cleanMessage = message
-				return { cleanMessage }
 			}
+			return { cleanMessage}
 	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
