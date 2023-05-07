@@ -78,8 +78,8 @@ module.exports = {
 			const intent = result[0].queryResult.intent.displayName
 			const response = result[0].queryResult.fulfillmentText
 			console.log(messageWithoutName)
-			console.log(intent)
-			console.log(response)
+			console.log("Intent: " + intent)
+			console.log("Dialogflow: " + response)
 			return { result, intent, response }
 		} catch (e) {
 			console.log(e.message)
@@ -166,7 +166,7 @@ module.exports = {
 			)
 			message.channel.send(completion.data.choices[0].text)
 			console.log(message.cleanContent)
-			console.log(completion.data.choices[0].text)
+			console.log("AI: " + completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
 		}
