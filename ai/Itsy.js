@@ -3,12 +3,10 @@ module.exports = {
 	execute: async function (client, message, functions, set, MessageEmbed) {
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase()) || message.channel.type == "DM") {
 			const answer = await functions.DialogflowQuery(client, message)
-
 			if (answer) {
 				if (answer.intent === "Default Fallback Intent") {
 					functions.OpenAIAnswer(client, message)
 				}
-
 				//=================================================================
 				else if (answer.intent.substring(0, 5) === "embed") {
 					const data = await functions.SpreadsheetGET(client)
@@ -19,7 +17,6 @@ module.exports = {
 				}
 				//=========================================================================================================
 				else if (answer.intent === "Blog") {
-					//throws an error that it can't send an empty message but works fine?
 					try {
 						const axios = require("axios")
 						const CollectionList = await axios.request({
@@ -127,28 +124,15 @@ module.exports = {
 							.setDescription(`${Member[0]["bio-summary"]}\n\u200b`)
 							.setThumbnail(Member[0]["profile-picture"].url)
 							.addField(`Connect with ${Member[0].nickname}`, SocialMediaLinks.join("	　"))
-						//.setFooter(`${Member[0].nickname} is a part of VRCB since`)
-						//.setTimestamp(Member[0]["created-on"])
 
 						message.channel.send({ embeds: [embed] })
 					} catch (error) {
 						message.channel.send("Hm, sorry I could not find what you were looking for! 😟")
 						console.log(error)
-						functions.Error(client, `Looks like there is an issue with a webflow entry Itsy is trying to get!\n ${error}`)
 					}
-				}
-
-				//=========================================================================================================
-				else {
+				} else {
 					message.channel.send(answer.response)
 				}
-				//=========================================================================================================
-			}
-		}
-		// MENTIONS ==========================================================
-		else if (!message.author.bot) {
-			if (message.channel.type != "dm") {
-				functions.Mention(client, message)
 			}
 		}
 	}
