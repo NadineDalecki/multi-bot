@@ -12,7 +12,6 @@ const openai = new OpenAIApi(configuration)
 module.exports = {
 	CleanMessage: function(client, message) {
 		cleanMessage = message.cleanContent
-		let firstWord =message.cleanContent.split(" ")
 		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
 			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
 		}

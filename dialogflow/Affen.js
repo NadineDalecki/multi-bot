@@ -5,7 +5,7 @@ module.exports = {
 		const axios = require("axios")
 		const adminRoles = set[client.user.username].adminRoles
 
-		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.channel.type == "DM") {
+		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase()) || message.channel.type == "DM") {
 			const text = functions.CleanMessage(client, message)
 			const answer = await functions.DialogflowQuery(client, message, text)
 
