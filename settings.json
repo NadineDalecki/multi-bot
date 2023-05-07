@@ -10,7 +10,6 @@
             "425225020382642176",
             "855095019568627765"
         ],
-        "logChannel": "855086292801814538",
         "status": "dnd",
         "activity": {
             "name": "shit talking",
@@ -36,7 +35,6 @@
         "guildId": "424911215714631690",
         "prefix": "?",
         "character":  "Rule: Stay in character as an overly friendly star wars robot BB8 responding to this:  ",
-        "logChannel": "718176504437276682",
         "status": "online",
         "activity": {
             "name": "Affen 👀",
@@ -48,10 +46,6 @@
         "spreadsheetID": "1LJ1feFfh69kEIM_oSfcSDvB-wYfrOzOj1Bdz6IIvhAI",
         "guildId": "424911215714631690",
         "prefix": "?",
-        "adminRoles": [
-            
-        ],
-        "logChannel": "718176504437276682",
         "status": "online",
         "activity": {
             "name": "the Game 💯",
@@ -63,9 +57,6 @@
         "spreadsheetID": "1bGlnkyVZv8KCRcZxmCGN9gQJRr_vwMLlKIAqr6NCKtE",
         "guildId": "674732735247679498",
         "prefix": "?",
-        "adminRoles": [
-                    ],
-        "logChannel": "718176504437276682",
         "status": "online",
         "activity": {
             "name": "all the new people",
@@ -77,9 +68,6 @@
         "spreadsheetID": "12qdFHDD7XvN8QeSY7OhgQkeLtgc-q18do0DL_wj4jBQ",
         "guildId": "424911215714631690",
         "prefix": "?",
-        "adminRoles": [
-                    ],
-        "logChannel": "718176504437276682",
        "status": "online",
         "activity": {
             "name": "the Greek Chorus",
@@ -92,11 +80,6 @@
         "guildId": "610545116494430234",
         "prefix": "?",
         "character":  "Rule: Stay in character as a cheeky, friendly and helpful bot named Itsy responding to this: ",
-        "adminRoles": [
-            "677015339120328704",
-            "425225020382642176"
-        ],
-        "logChannel": "718176504437276682",
         "status": "online",
         "activity": {
             "name": "your ideas 💡",
@@ -108,10 +91,6 @@
         "spreadsheetID": "1796GF3ICIwm-qsmnynXCvxpGOmSwsWHpWjXxQBhzZO0",
         "guildId": "838301618167480350",
         "prefix": "?",
-        "adminRoles": [
-            
-        ],
-        "logChannel": "718176504437276682",
         "status": "online",
         "activity": {
             "name": "the Specialists 👀",
@@ -124,11 +103,6 @@
         "guildId": "707307751033798666",
         "prefix": "?",
         "character":  "Rule: Stay in character as a cheeky, friendly and helpful bot named KVN responding to this: ",
-        "adminRoles": [
-            "724966816056606780",
-            "763833830233866291"
-        ],
-        "logChannel": "748550054964494468",
         "status": "online",
         "activity": {
             "name": "the beta testers",
@@ -140,12 +114,6 @@
         "spreadsheetID": "1b-2t41LO_U5j8gJfxPS_rdg4Y8kINwMgSqUKpNdf4RE",
         "guildId": "326412222119149578",
         "prefix": "?",
-        "adminRoles": [
-            "151759779016998913",
-            "702591687096270848",
-            "425225020382642176"
-        ],
-        "logChannel": "724967322867204096",
         "status": "online",
         "activity": {
             "name": "your questions ❓",
@@ -158,10 +126,6 @@
         "guildId": "424911215714631690",
         "prefix": "!",
         "character": "Rule: Don't use quotes to respond and stay in character as the devil responding to this: ",
-        "adminRoles": [
-            "425225020382642176"
-        ],
-        "logChannel": "718176504437276682",
         "status": "dnd",
          "activity": {
             "name": "himself",
@@ -172,11 +136,6 @@
     "TG Bot": {
         "guildId": "421618914166833152",
         "prefix": "?",
-        "adminRoles": [
-            "647068080908009472",
-            "421641048155226113"
-        ],
-        "logChannel": "718176504437276682",
         "status": "online",
         "activity": {
             "name": "in Zero Gravity",
