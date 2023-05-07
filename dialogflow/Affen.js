@@ -10,7 +10,7 @@ module.exports = {
 		} else if (message.channel.type == "DM" || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase())) {
 			messageWithoutName = message.cleanContent
 		}
-        const text = functions.CleanMessage(client, message.cleanContent)
+        const text = functions.CleanMessage(client, message)
 		console.log("Text is: " + text)
 		const answer = await functions.DialogflowQuery(client, message, messageWithoutName)
 		messageWithCharacter = `${set[client.user.username].character} ${messageWithoutName}`
