@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 })
 app.listen()
 
-const { Client, Intents, MessageEmbed } = require("discord.js")
+const { Client, Intents} = require("discord.js")
 const set = require("./settings.json")
 const functions = require("./functions.js")
 
@@ -42,8 +42,6 @@ function runBot(token) {
 				}
 			]
 		})
-		const serverList = client.guilds.cache.map(g => g.name).join(" | ")
-		console.log(`${client.user.username} | ${serverList}`)
 	})
 	client.login(token)
 

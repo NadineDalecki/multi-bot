@@ -1,5 +1,4 @@
 const dialogflow = require("@google-cloud/dialogflow")
-const functions = require("./functions.js")
 const fs = require("fs")
 const set = require("./settings.json")
 const { GoogleSpreadsheet } = require("google-spreadsheet")
@@ -11,15 +10,6 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 module.exports = {
-	CleanMessage: function (client, message) {
-		cleanMessage = message.cleanContent
-		if (message.cleanContent.toLowerCase().startsWith(client.user.username.toLowerCase() + " ") || message.content.startsWith("<@" + client.user.id + ">")) {
-			cleanMessage = message.cleanContent.substr(message.cleanContent.indexOf(" ") + 1)
-		} else {
-			cleanMessage = message.cleanContent
-		}
-		return cleanMessage
-	},
 	Command: function (client, message, functions, set) {
 		client.commands = new Collection()
 		const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
