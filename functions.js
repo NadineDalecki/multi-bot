@@ -76,9 +76,8 @@ module.exports = {
 			const result = await sessionClient.detectIntent(request)
 			const intent = result[0].queryResult.intent.displayName
 			const response = result[0].queryResult.fulfillmentText
-			console.log(messageWithoutName)
+			console.log("User message: " + messageWithoutName)
 			console.log("Intent: " + intent)
-			console.log("Dialogflow: " + response)
 			return { result, intent, response }
 		} catch (e) {
 			console.log(e.message)
@@ -153,6 +152,7 @@ module.exports = {
 	},
 	OpenAIAnswer: async function (client, message, text) {
 		messageWithCharacter = `${set[client.user.username].character} ${text}`
+		console.log("messageWithCharacter" + messageWithCharacter)
 		try {
 			const completion = await openai.createCompletion(
 				{
@@ -165,7 +165,6 @@ module.exports = {
 				}
 			)
 			message.channel.send(completion.data.choices[0].text)
-			console.log(message.cleanContent)
 			console.log("AI: " + completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
