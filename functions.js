@@ -162,7 +162,7 @@ module.exports = {
 					timeout: 10000
 				}
 			)
-			message.channel.send(completion.data.choices[0].textreplace(/['"]/g, ''))
+			message.channel.send(completion.data.choices[0].replace(/['"]/g, ''))
 			console.log("AI: " + completion.data.choices[0].text)
 		} catch (e) {
 			console.log(e.message)
