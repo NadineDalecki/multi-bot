@@ -167,7 +167,7 @@ module.exports = {
 			)
 			message.channel.send(completion.data.choices[0].text.split('"').join(""))
 		} catch (e) {
-			console.log(e.message)
+			console.log(message.cleanContent + "|" + e.message)
 		}
 	},
 	SpreadsheetGET: async function (client) {
