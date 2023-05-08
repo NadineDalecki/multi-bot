@@ -158,7 +158,7 @@ module.exports = {
 			const completion = await openai.createCompletion(
 				{
 					model: "text-davinci-003",
-					prompt: `${set[client.user.username].character} ${cleanMessage}`,
+					prompt: `${set[client.user.username].character} ${cleanMessage}.`,
 					max_tokens: 1000
 				},
 				{
