@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 })
 app.listen()
 
-const { Client, Intents, MessageEmbed } = require("discord.js")
+const { Client, Intents, MessageEmbed } = require("discord.js") //
 const set = require("./settings.json")
 const functions = require("./functions.js")
 
