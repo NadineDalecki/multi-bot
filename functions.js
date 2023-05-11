@@ -2,7 +2,7 @@ const dialogflow = require("@google-cloud/dialogflow")
 const fs = require("fs")
 const set = require("./settings.json")
 const { GoogleSpreadsheet } = require("google-spreadsheet")
-const { Collection, MessageEmbed } = require("discord.js")
+const { Collection } = require("discord.js")
 const { Configuration, OpenAIApi } = require("openai")
 const configuration = new Configuration({
 	apiKey: process.env.OPENAI_API_KEY
