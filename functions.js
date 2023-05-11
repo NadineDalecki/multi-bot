@@ -10,7 +10,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 module.exports = {
-	AI: function (client, message, functions, set) {
+	AI: function (client, message, functions, set, MessageEmbed) {
 		client.ai = new Collection()
 		const aiFiles = fs.readdirSync("./ai").filter(file => file.endsWith(".js"))
 		for (const file of aiFiles) {
