@@ -51,7 +51,7 @@ function runBot(token) {
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
 			} else {
-				functions.AI(client, message, functions, set)
+				functions.AI(client, message, functions, set, MessageEmbed)
 			}
 		}
 	})
