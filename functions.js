@@ -24,7 +24,7 @@ module.exports = {
 			console.error(error)
 		}
 	},
-	Command: function (client, message, functions, set) {
+	Command: function (client, message, functions, set, MessageEmbed) {
 		client.commands = new Collection()
 		const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
 		for (const file of commandFiles) {
