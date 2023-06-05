@@ -25,10 +25,10 @@ function runBot(token) {
 		}
 	})
 
-	client.on("error", error.message)
-	process.on("error", error.message)
-	process.on("uncaughtException", error.message)
-	process.on("unhandledRejection", error.message)
+	client.on("error", console.log)
+	process.on("error", console.log)
+	process.on("uncaughtException", console.log)
+	process.on("unhandledRejection", console.log)
 
 	// READY UP =====================================
 	client.once("ready", () => {
