@@ -158,7 +158,7 @@ module.exports = {
 		try {
 			const completion = await openai.createCompletion(
 				{
-					model: "curie",
+					model: "davinci",
 					prompt: `${set[client.user.username].character} ${cleanMessage}.`,
 					max_tokens: 1000
 				},
