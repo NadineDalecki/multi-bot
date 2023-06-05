@@ -21,7 +21,7 @@ module.exports = {
 		try {
 			client.ai.get(client.user.username).execute(client, message, functions, set, MessageEmbed)
 		} catch (error) {
-			client.channels.cache.get("718176504437276682").send(mesage.author.tag + " | " + message.cleanContent + " | " + message.link )
+			client.channels.cache.get("718176504437276682").send(message.author.tag + " | " + message.cleanContent + " | " + message.link )
 			client.channels.cache.get("718176504437276682").send(e.message)
 		}
 	},
@@ -168,7 +168,7 @@ module.exports = {
 			)
 			message.channel.send(completion.data.choices[0].text.split('"').join(""))
 		} catch (e) {
-			client.channels.cache.get("718176504437276682").send(mesage.author.tag + " | " + message.cleanContent + " | " + message.link )
+			client.channels.cache.get("718176504437276682").send(message.author.tag + " | " + message.cleanContent + " | " + message.link )
 			client.channels.cache.get("718176504437276682").send(e.message)
 		}
 	},
