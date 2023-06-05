@@ -25,10 +25,10 @@ function runBot(token) {
 		}
 	})
 
-	client.on("error", client.channels.cache.get("718176504437276682").send(error.message))
-	process.on("error", client.channels.cache.get("718176504437276682").send(error.message))
-	process.on("uncaughtException", client.channels.cache.get("718176504437276682").send(error.message))
-	process.on("unhandledRejection", client.channels.cache.get("718176504437276682").send(error.message))
+	client.on("error", error.message)
+	process.on("error", error.message)
+	process.on("uncaughtException", error.message)
+	process.on("unhandledRejection", error.message)
 
 	// READY UP =====================================
 	client.once("ready", () => {
