@@ -82,6 +82,8 @@ module.exports = {
 		}
 	},
 	EmbedBuilder: function (embed) {
+		console.log(embed.name)
+		console.log(embed.description)
 		try {
 			const newEmbed = new MessageEmbed()
 
