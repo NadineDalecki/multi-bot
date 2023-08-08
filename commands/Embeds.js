@@ -1,23 +1,18 @@
 module.exports = {
-    name: "e",
-    async execute(client, message, functions, args, set, MessageEmbed) {
-        console.log("Trying to post an embed! 1") 
-        message.delete().catch(_ => { });
-        const adminRoles = set[client.user.username].adminRoles;
-        console.log("Trying to post an embed!2")
-        if (message.channel.type == "DM" ||
-            message.member.roles.cache.some(r => adminRoles.includes(r.id)) ||
-            message.member.hasPermission("ADMINISTRATOR")
-        ) {
-            console.log(message)
-            const data = await functions.SpreadsheetGET(client);
-            const sheet = data.doc.sheetsByTitle["Embeds"];
-            const rows = await sheet.getRows();
+	name: "e",
+	async execute(client, message, functions, args, set, MessageEmbed) {
+		message.delete().catch(_ => {})
+		const adminRoles = set[client.user.username].adminRoles
 
-            let embed = rows.filter(embed => embed.name == args.join(" "));
-            console.log(embed)
-            const finalEmbed = functions.EmbedBuilder(embed);
-            message.channel.send({ embeds: [finalEmbed] });;
-        }
-    }
-};
+		if (message.channel.type == "DM" || message.member.roles.cache.some(r => adminRoles.includes(r.id)) || message.member.hasPermission("ADMINISTRATOR")) {
+			const data = await functions.SpreadsheetGET(client)
+			const sheet = data.doc.sheetsByTitle["Embeds"]
+			const rows = await sheet.getRows()
+
+			let embed = rows.filter(embed => embed.name == args.join(" "))
+
+			const finalEmbed = functions.EmbedBuilder(embed)
+			message.channel.send({ embeds: [finalEmbed] })
+		}
+	}
+}
