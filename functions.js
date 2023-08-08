@@ -85,6 +85,9 @@ module.exports = {
 		try {
 			const newEmbed = new MessageEmbed()
 
+			console.log(embed.description)
+			console.log(embed[0].description)
+
 			newEmbed.setDescription(embed.description)
 
 			if (embed[0].Color) {
