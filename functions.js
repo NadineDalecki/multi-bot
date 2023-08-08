@@ -98,7 +98,7 @@ module.exports = {
 				newEmbed.setAuthor({ name: embed[0].Author_Text, iconURL: embed[0].Author_Avatar_Link, url: embed[0].Author_URL })
 			}
 			if (embed[0].Description !== "undefined") {
-				newEmbed.setDescription(embed[0].Description)
+				newEmbed.setDescription("test") //embed[0].Description
 			}
 			if (embed[0].Thumbnail !== "undefined") {
 				newEmbed.setThumbnail(embed[0].Thumbnail)
