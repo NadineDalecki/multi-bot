@@ -3,6 +3,7 @@ module.exports = {
     async execute(client, message, functions, args, set) {
         message.delete().catch(_ => { });
         const adminRoles = set[client.user.username].adminRoles;
+        console.log("Trying to post an embed!")
         if (message.channel.type == "DM" ||
             message.member.roles.cache.some(r => adminRoles.includes(r.id)) ||
             message.member.hasPermission("ADMINISTRATOR")
