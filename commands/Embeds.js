@@ -1,9 +1,10 @@
 module.exports = {
     name: "e",
     async execute(client, message, functions, args, set, MessageEmbed) {
+        console.log("Trying to post an embed! 1") 
         message.delete().catch(_ => { });
         const adminRoles = set[client.user.username].adminRoles;
-        console.log("Trying to post an embed!")
+        console.log("Trying to post an embed!2")
         if (message.channel.type == "DM" ||
             message.member.roles.cache.some(r => adminRoles.includes(r.id)) ||
             message.member.hasPermission("ADMINISTRATOR")
