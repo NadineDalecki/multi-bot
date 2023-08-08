@@ -32,11 +32,11 @@ module.exports = {
 			const command = require(`./commands/${file}`)
 			client.commands.set(command.name, command)
 		}
+		const args = message.content.slice(set[client.user.username].prefix.length).split(/ +/)
+		console.log(args)
 		if (!client.commands.has(command)) return
 		try {
 			if (command !== "") {
-				const args = message.content.slice(set[client.user.username].prefix.length).split(/ +/)
-				console.log(args)
 				const command = args.shift().toLowerCase()
 				client.commands.get(command).execute(client, message, functions, args, set, MessageEmbed)
 			}
