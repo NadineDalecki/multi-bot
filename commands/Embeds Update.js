@@ -5,7 +5,6 @@ module.exports = {
 
     const adminRoles = set[client.user.username].adminRoles;
     if (
-      message.member.roles.cache.some(r => adminRoles.includes(r.id)) ||
       message.member.hasPermission("ADMINISTRATOR")
     ) {
       const data = await functions.SpreadsheetGET(client);
