@@ -6,7 +6,7 @@ module.exports = {
 		message.delete().catch(_ => {})
 		const adminRoles = set[client.user.username].adminRoles
 
-		if (message.channel.type == "DM" || message.member.roles.cache.some(r => adminRoles.includes(r.id)) || message.member.hasPermission("ADMINISTRATOR")) {
+		if (message.channel.type == "DM" || message.member.permissions.has("ADMINISTRATOR")) {
 			const data = await functions.SpreadsheetGET(client)
 			const sheet = data.doc.sheetsByTitle["Embeds"]
 			const rows = await sheet.getRows()

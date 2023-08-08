@@ -5,7 +5,7 @@ module.exports = {
 
     const adminRoles = set[client.user.username].adminRoles;
     if (
-      message.member.hasPermission("ADMINISTRATOR")
+      message.member.permissions.has("ADMINISTRATOR")
     ) {
       const data = await functions.SpreadsheetGET(client);
       const sheet = data.doc.sheetsByTitle["Embeds"];
