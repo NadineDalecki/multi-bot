@@ -1,3 +1,5 @@
+const {MessageEmbed } = require("discord.js")
+
 module.exports = {
 	name: "e",
 	async execute(client, message, functions, args, set, MessageEmbed) {

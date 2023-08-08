@@ -105,9 +105,6 @@ module.exports = {
 			if (embed[0].Image !== "undefined") {
 				newEmbed.setImage(embed[0].Image)
 			}
-			if (embed[0].Image !== "undefined") {
-				newEmbed.setImage(embed[0].Image)
-			}
 			if (embed[0].Footer_Avatar_URL !== "undefined" && embed[0].Footer_Text) {
 				newEmbed.setFooter(embed[0].Footer_Text, embed[0].Footer_Avatar_URL)
 			}
