@@ -1,6 +1,6 @@
 module.exports = {
   name: "u",
-  async execute(client, message, functions, args, set) {
+  async execute(client, message, functions, args, set, MessageEmbed) {
     message.delete().catch(_ => {});
 
     const adminRoles = set[client.user.username].adminRoles;
