@@ -21,7 +21,7 @@ module.exports = {
 		try {
 			client.ai.get(client.user.username).execute(client, message, functions, set, MessageEmbed)
 		} catch (error) {
-			client.channels.cache.get("718176504437276682").send(message.author.tag + " | " + message.cleanContent + " | " + message.link)
+			client.channels.cache.get("718176504437276682").send(mesage.author.tag + " | " + message.cleanContent + " | " + message.link)
 			client.channels.cache.get("718176504437276682").send(e.message)
 		}
 	},
@@ -31,14 +31,12 @@ module.exports = {
 		for (const file of commandFiles) {
 			const command = require(`./commands/${file}`)
 			client.commands.set(command.name, command)
-			console.log(command)
 		}
 		const args = message.content.slice(set[client.user.username].prefix.length).split(/ +/)
-		console.log(args)
+		const command = args.shift().toLowerCase()
 		if (!client.commands.has(command)) return
 		try {
 			if (command !== "") {
-				const command = args.shift().toLowerCase()
 				client.commands.get(command).execute(client, message, functions, args, set, MessageEmbed)
 			}
 		} catch (error) {
@@ -170,7 +168,7 @@ module.exports = {
 			)
 			message.channel.send(completion.data.choices[0].text.split('"').join(""))
 		} catch (e) {
-			client.channels.cache.get("718176504437276682").send(message.author.tag + " | " + message.cleanContent + " | " + message.link)
+			client.channels.cache.get("718176504437276682").send(mesage.author.tag + " | " + message.cleanContent + " | " + message.link)
 			client.channels.cache.get("718176504437276682").send(e.message)
 		}
 	},
