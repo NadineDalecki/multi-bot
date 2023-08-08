@@ -31,6 +31,7 @@ module.exports = {
 		for (const file of commandFiles) {
 			const command = require(`./commands/${file}`)
 			client.commands.set(command.name, command)
+			console.log(command)
 		}
 		const args = message.content.slice(set[client.user.username].prefix.length).split(/ +/)
 		console.log(args)
