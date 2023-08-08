@@ -25,7 +25,7 @@ module.exports = {
 			client.channels.cache.get("718176504437276682").send(e.message)
 		}
 	},
-	Command: function (client, message, functions, set, MessageEmbed) {
+	Command: function (client, message, functions, args, set, MessageEmbed) {
 		client.commands = new Collection()
 		const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
 		for (const file of commandFiles) {
