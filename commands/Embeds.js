@@ -10,8 +10,8 @@ module.exports = {
 			const rows = await sheet.getRows()
 
 			let embed = rows.filter(embed => embed.name == args.join(" "))
-            console.log(embed.name)
-            console.log(embed[0].name)
+            console.log("embed name" + embed.name)
+            console.log("embed[0] name" + embed[0].name)
 			const finalEmbed = functions.EmbedBuilder(embed)
 			message.channel.send({ embeds: [finalEmbed] })
 		}
