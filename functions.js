@@ -131,6 +131,8 @@ module.exports = {
 			return newEmbed
 		} catch (e) {
 			console.log(`Looks like there is a problem with some spreadsheet data!`)
+			console.log(embed)
+			console.log(embed[0])
 		}
 	},
 	Mention: function (client, message) {
