@@ -14,7 +14,7 @@ module.exports = {
 				const finalEmbed = functions.EmbedBuilder(embed)
 				message.channel.send({ embeds: [finalEmbed] })
 			} catch (e) {
-				console.log(e)
+				console.log(e.message)
 			}
 		}
 	}

@@ -85,8 +85,6 @@ module.exports = {
 		try {
 			const newEmbed = new MessageEmbed()
 
-			console.log(embed)
-
 			newEmbed.setDescription(embed[0].description)
 
 			if (embed[0].Color) {
@@ -131,8 +129,7 @@ module.exports = {
 			return newEmbed
 		} catch (e) {
 			console.log(`Looks like there is a problem with some spreadsheet data!`)
-			console.log(embed)
-			console.log(embed[0])
+			console.log(e.message)
 		}
 	},
 	Mention: function (client, message) {
