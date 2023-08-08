@@ -82,10 +82,10 @@ module.exports = {
 		}
 	},
 	EmbedBuilder: function (embed) {
-		console.log(embed.name)
-		console.log(embed.description)
 		try {
 			const newEmbed = new MessageEmbed()
+
+			newEmbed.setDescription(embed[0].description)
 
 			if (embed[0].Color) {
 				newEmbed.setColor(embed[0].Color)
@@ -98,9 +98,6 @@ module.exports = {
 			}
 			if (embed[0].Author_Text !== "undefined") {
 				newEmbed.setAuthor({ name: embed[0].Author_Text, iconURL: embed[0].Author_Avatar_Link, url: embed[0].Author_URL })
-			}
-			if (embed[0].description !== "undefined") {
-				newEmbed.setDescription(embed[0].description)
 			}
 			if (embed[0].Thumbnail !== "undefined") {
 				newEmbed.setThumbnail(embed[0].Thumbnail)

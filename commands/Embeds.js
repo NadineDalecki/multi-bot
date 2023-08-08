@@ -11,7 +11,7 @@ module.exports = {
 
 			let embed = rows.filter(embed => embed.name == args.join(" "))
 			try {
-				const finalEmbed = functions.EmbedBuilder(embed[0])
+				const finalEmbed = functions.EmbedBuilder(embed)
 				message.channel.send({ embeds: [finalEmbed] })
 			} catch (e) {
 				console.log(e)
