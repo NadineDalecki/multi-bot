@@ -31,6 +31,7 @@ module.exports = {
 					message.channel.send({ embeds: [embed] })
 					cooldowns.set(cooldownKey, now)
 				} catch (e) {
+					console.log(e)
 					message.channel.send("r/FoodPorn is protesting against reddits API billing...nothing I can do about it. Maybe it will work again later!")
 				}
 			} else {
