@@ -32,7 +32,7 @@ module.exports = {
 					cooldowns.set(cooldownKey, now)
 				} catch (e) {
 					console.log(e)
-					message.channel.send("r/FoodPorn is protesting against reddits API billing...nothing I can do about it. Maybe it will work again later!")
+					message.channel.send("Reddit is lacking motivation right now...nothing I can do about it. Maybe it will work again later!")
 				}
 			} else {
 				message.channel.send("Wrong channel you noob. Use #incredible-edible.")
