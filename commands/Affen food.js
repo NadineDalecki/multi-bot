@@ -19,7 +19,7 @@ module.exports = {
 				}
 				try {
 					const foodItem = await axios.request({
-						url: "https://www.reddit.com/r/foodporn.json",
+						url: "https://www.reddit.com/r/foodporn.new.json",
 						method: "get"
 					})
 					console.log(foodItem)
