@@ -23,7 +23,7 @@ module.exports = {
 						method: "get"
 					})
 					console.log(foodItem)
-					console.log(foodItem.data.data)
+					console.log(foodItem.data)
 					var randomNum = Math.floor(Math.random() * foodItem.data.data.dist)
 					const image = foodItem.data.data.children[randomNum].data.url
 					const title = foodItem.data.data.children[randomNum].data.title
