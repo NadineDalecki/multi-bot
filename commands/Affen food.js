@@ -22,8 +22,8 @@ module.exports = {
 						url: "https://www.reddit.com/r/foodporn.json",
 						method: "get"
 					})
-					console.log(fooditem)
-					console.log(fooditem.data.data)
+					console.log(foodItem)
+					console.log(foodItem.data.data)
 					var randomNum = Math.floor(Math.random() * foodItem.data.data.dist)
 					const image = foodItem.data.data.children[randomNum].data.url
 					const title = foodItem.data.data.children[randomNum].data.title
