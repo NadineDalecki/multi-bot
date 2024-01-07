@@ -51,7 +51,7 @@ function runBot(token) {
 			if (client.user.username == "Affen" && message.content.startsWith("spark://c/")){
 				console.log(message.cleanContent)
 				console.log(`https://${message.cleanContent}`)
-				message.reply([Link](`https://${message.cleanContent}`))
+				message.reply([Link](`https://sprock.io/${message.cleanContent}`))
 			}
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
