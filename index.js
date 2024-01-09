@@ -49,7 +49,7 @@ function runBot(token) {
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
 			if (client.user.username == "Affen" && message.content.startsWith("spark://c/")){
-				message.reply(`https://sprock.io/${message.cleanContent}`)
+				message.channel.send(`https://sprock.io/${message.cleanContent}`)
 			}
 			if (message.content.startsWith(set[client.user.username].prefix)) {
 				functions.Command(client, message, functions, set, MessageEmbed)
