@@ -19,7 +19,7 @@ module.exports = {
 				}
 				try {
 					const foodItem = await axios.request({
-						url: "https://www.reddit.com/r/foodporn/new.json",
+						url: "https://www.reddit.com/r/foodporn/hot.json",
 						method: "get"
 					})
 					var randomNum = Math.floor(Math.random() * foodItem.data.data.dist)
