@@ -48,11 +48,11 @@ function runBot(token) {
 	// MESSAGE =====================================
 	client.on("messageCreate", async message => {
 		if (client.user.id != message.author.id && !message.author.bot && !(message.content.includes("@here") || message.content.includes("@everyone"))) {
-			client.channels.cache.get("718176504437276682").send(message.cleanContent)
 			if (client.user.username == "Affen" && message.content.startsWith("spark://c/")){
 				message.channel.send(`https://sprock.io/${message.cleanContent}`)
 			}
 			if (message.content.startsWith(set[client.user.username].prefix)) {
+				client.channels.cache.get("718176504437276682").send(message.cleanContent)
 				functions.Command(client, message, functions, set, MessageEmbed)
 			} else {
 				functions.AI(client, message, functions, set, MessageEmbed)
