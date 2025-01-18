@@ -2,6 +2,7 @@ module.exports = {
 	name: "Itsy",
 	execute: async function (client, message, functions, set, MessageEmbed) {
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase()) || message.channel.type == "DM") {
+			client.channels.cache.get("718176504437276682").send(mesage.author.tag + " | " + message.cleanContent + " | " + message.link)
 			const answer = await functions.DialogflowQuery(client, message)
 			if (answer) {
 				if (answer.intent === "Default Fallback Intent") {

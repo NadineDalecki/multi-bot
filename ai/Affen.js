@@ -5,6 +5,7 @@ module.exports = {
 		const adminRoles = set[client.user.username].adminRoles
 
 		if (message.mentions.has(client.user.id) || message.cleanContent.toLowerCase().includes(client.user.username.toLowerCase()) || message.channel.type == "DM") {
+			client.channels.cache.get("718176504437276682").send(mesage.author.tag + " | " + message.cleanContent + " | " + message.link)
 			const answer = await functions.DialogflowQuery(client, message)
 
 			if (answer) {
