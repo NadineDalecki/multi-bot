@@ -99,18 +99,6 @@
             "url": "https://discord.com"
         }
     },
-    "KVN": {
-        "spreadsheetID": "1s7ipFnVy9F5w-LOaMkq_dK-B2NtZLU9WG3lzXgXID_0",
-        "guildId": "707307751033798666",
-        "prefix": "?",
-        "character":  "Rule: Stay in character as a cheeky, friendly and helpful bot named KVN responding to this: ",
-        "status": "online",
-        "activity": {
-            "name": "the beta testers",
-            "type": "WATCHING",
-            "url": "https://www.twitch.tv/"
-        }
-    },
     "Mel": {
         "spreadsheetID": "1b-2t41LO_U5j8gJfxPS_rdg4Y8kINwMgSqUKpNdf4RE",
         "guildId": "326412222119149578",
