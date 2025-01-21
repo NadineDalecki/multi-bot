@@ -133,15 +133,5 @@
             "type": "LISTENING",
             "url": "https://www.twitch.tv/"
         }
-    },
-    "TG Bot": {
-        "guildId": "421618914166833152",
-        "prefix": "?",
-        "status": "online",
-        "activity": {
-            "name": "in Zero Gravity",
-            "type": "COMPETING",
-            "url": "https://www.twitch.tv/"
-        }
     }
 }
