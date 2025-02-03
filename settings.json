@@ -43,28 +43,6 @@
             "url": "https://discord.com"
         }
     },
-     "Ewan": {
-        "spreadsheetID": "1bGlnkyVZv8KCRcZxmCGN9gQJRr_vwMLlKIAqr6NCKtE",
-        "guildId": "674732735247679498",
-        "prefix": "?",
-        "status": "online",
-        "activity": {
-            "name": "all the new people",
-            "type": "WATCHING",
-            "url": "https://discord.com"
-        }
-    },
-    "Hermes": {
-        "spreadsheetID": "12qdFHDD7XvN8QeSY7OhgQkeLtgc-q18do0DL_wj4jBQ",
-        "guildId": "424911215714631690",
-        "prefix": "?",
-       "status": "online",
-        "activity": {
-            "name": "the Greek Chorus",
-            "type": "WATCHING",
-            "url": "https://discord.com"
-        }
-    },
     "Itsy": {
         "spreadsheetID": "1WwEw74tAaqXjza58SDB2E42aWOLuehxYvJ-8eBrSv6U",
         "guildId": "610545116494430234",
@@ -73,40 +51,6 @@
         "status": "online",
         "activity": {
             "name": "your ideas 💡",
-            "type": "LISTENING",
-            "url": "https://www.twitch.tv/"
-        }
-    },
-    "Igle": {
-        "spreadsheetID": "1796GF3ICIwm-qsmnynXCvxpGOmSwsWHpWjXxQBhzZO0",
-        "guildId": "838301618167480350",
-        "prefix": "?",
-        "status": "online",
-        "activity": {
-            "name": "the Specialists 👀",
-            "type": "WATCHING",
-            "url": "https://discord.com"
-        }
-    },
-    "Mel": {
-        "spreadsheetID": "1b-2t41LO_U5j8gJfxPS_rdg4Y8kINwMgSqUKpNdf4RE",
-        "guildId": "326412222119149578",
-        "prefix": "?",
-        "status": "online",
-        "activity": {
-            "name": "your questions ❓",
-            "type": "LISTENING",
-            "url": "https://www.twitch.tv/echoarena_vrml"
-        },
-        "muteRole": "748631446217818123"
-    },
-    "Mo": {
-        "guildId": "424911215714631690",
-        "prefix": "!",
-        "character": "Rule: Don't use quotes to respond and stay in character as the devil responding to this: ",
-        "status": "dnd",
-         "activity": {
-            "name": "himself",
             "type": "LISTENING",
             "url": "https://www.twitch.tv/"
         }
