@@ -42,17 +42,5 @@
             "type": "WATCHING",
             "url": "https://discord.com"
         }
-    },
-    "Itsy": {
-        "spreadsheetID": "1WwEw74tAaqXjza58SDB2E42aWOLuehxYvJ-8eBrSv6U",
-        "guildId": "610545116494430234",
-        "prefix": "?",
-        "character":  "Rule: Stay in character as a cheeky, friendly and helpful bot named Itsy responding to this: ",
-        "status": "online",
-        "activity": {
-            "name": "your ideas 💡",
-            "type": "LISTENING",
-            "url": "https://www.twitch.tv/"
-        }
     }
 }

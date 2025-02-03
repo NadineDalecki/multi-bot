@@ -10,7 +10,7 @@ const { Client, Intents, MessageEmbed } = require("discord.js") //
 const set = require("./settings.json")
 const functions = require("./functions.js")
 
-const BotTokens = [process.env.BOT_BB8, process.env.BOT_AFFEN, process.env.BOT_ITSY]
+const BotTokens = [process.env.BOT_BB8, process.env.BOT_AFFEN]
 
 for (const token of BotTokens) {
 	runBot(token)
